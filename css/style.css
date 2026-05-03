@@ -4,6 +4,107 @@ body {
     background: #f4f6f9;
 }
 
+.bd-index {
+    background: #fbfbfc;
+}
+
+h1 {
+    font-size: 42px;
+}
+
+.navbar-brand {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.card {
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.bg-primary {
+    background: linear-gradient(90deg, #2d6cdf, #4a8cff) !important;
+}
+
+.btn-primary {
+    border-radius: 25px;
+}
+
+.btn-outline-primary {
+    border-radius: 25px;
+}
+
+.why-box {
+    background: linear-gradient(90deg, #e9f4fc);
+    padding: 35px 20px;
+    margin: 0px;
+    border-radius: 20px;
+    margin-bottom: 0px;
+}
+
+.bii {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.cta-section {
+    background: linear-gradient(90deg, #c8e6fc);
+    padding: 35px 20px;
+    margin: 0px;
+    border-radius: 20px;
+    margin-bottom: 0px;
+}
+
+.fitur-card {
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.fitur-img {
+    width: 60px;
+    height: 60px;
+}
+
+.cta-text h3 {
+    color: #0d3c91;
+}
+
+.cta-text p {
+    color: #1f4bb8;
+}
+
+.cta-section .btn {
+    background: white;
+    color: #1f4aa8;
+    border-radius: 30px;
+    padding: 10px 25px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.cta-section .btn:hover {
+    background: #1f4aa8;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.footer-index {
+    background: #0d3c91;
+    color: white;
+    padding: 35px 20px;
+    margin-top: 0;
+}
+
+.footer-index h5, .footer-index h6 {
+    font-weight: bold;
+}
+
 /* LAYOUT */
 .container {
     display: grid;
@@ -13,7 +114,7 @@ body {
 }
 
 /* CARD */
-.card {
+.card-kal {
     background: white;
     padding: 20px;
     border-radius: 12px;

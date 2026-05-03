@@ -42,7 +42,7 @@ if(isset($_POST['hitung'])) {
 <div class="container">
 
     <!-- KIRI: FORM -->
-    <div class="card form-card">
+    <div class="card-kal form-card">
         <h3>Data Perhitungan</h3>
 
         <form method="POST">
@@ -73,7 +73,7 @@ if(isset($_POST['hitung'])) {
     </div>
 
     <!-- KANAN: HASIL -->
-    <div class="card hasil-card">
+    <div class="card-kal hasil-card">
         <h3>Hasil Kebutuhan Kalori</h3>
 
         <?php if($hasil) { ?>
