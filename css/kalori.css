@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f4f7ff;
+}
+
+.main-container{
+    display:flex;
+    min-height:100vh;
+}
+
+.sidebar{
+    width:20%;
+    background:#fff;
+    padding:25px;
+    border-right:1px solid #eaeaea;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.logo-area{
+    margin-bottom:35px;
+}
+
+.logo-img{
+    width:120px;
+    margin-bottom:10px;
+}
+
+.logo-area h3{
+    color:#2563eb;
+    font-size:28px;
+    font-weight:700;
+}
+
+.logo-area p{
+    font-size:13px;
+    color:#888;
+    line-height:1.6;
+}
+
+.menu{
+    list-style:none;
+}
+
+.menu li{
+    margin-bottom:12px;
+}
+
+.menu li a{
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:15px;
+    border-radius:14px;
+    color:#5b6475;
+    font-size:15px;
+    font-weight:500;
+    transition:0.3s;
+}
+
+.menu li a:hover{
+    background:#edf4ff;
+    color:#2563eb;
+}
+
+.menu li a.active{
+    background:#2563eb;
+    color:white;
+}
+
+.hero-img{
+    margin-top:200px;
+    text-align:center;
+}
+
+.hero-img img{
+    width:100%;
+    max-width:500px;
+}
+
+.logout-btn{
+    text-decoration:none;
+    color:#5b6475;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:500;
+}
+
+.content{
+    width:80%;
+    padding:40px;
+}
+
+.content h1{
+    font-size:46px;
+    color:#102a5c;
+    margin-bottom:8px;
+}
+
+.breadcrumb{
+    color:#7b8190;
+    font-size:18px;
+    margin-bottom:35px;
+}
+
+.top-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.card-kalori,
+.hasil-card,
+.macro-card{
+    background:white;
+    border-radius:24px;
+    padding:30px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.05);
+}
+
+.card-kalori h2,
+.hasil-card h2,
+.macro-card h2{
+    font-size:28px;
+    color:#102a5c;
+    margin-bottom:30px;
+}
+
+.form-group{
+    margin-bottom:22px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:10px;
+    font-size:16px;
+    font-weight:600;
+}
+
+.form-group input,
+.form-group select{
+    width:100%;
+    height:58px;
+    border:1px solid #dbe2ef;
+    border-radius:16px;
+    padding:0 18px;
+    font-size:16px;
+    outline:none;
+}
+
+.input-flex{
+    display:flex;
+}
+
+.input-flex input{
+    border-top-right-radius:0;
+    border-bottom-right-radius:0;
+}
+
+.input-flex span{
+    width:90px;
+    border:1px solid #dbe2ef;
+    border-left:none;
+    background:#f8fafc;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-top-right-radius:16px;
+    border-bottom-right-radius:16px;
+}
+
+.btn-hitung{
+    width:100%;
+    height:60px;
+    border:none;
+    border-radius:18px;
+    background:#2563eb;
+    color:white;
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.kalori-circle{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    background:#ecfff5;
+    border:12px solid #86efac;
+
+    margin:auto;
+    margin-bottom:30px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    font-size:42px;
+    font-weight:700;
+    color:#16a34a;
+}
+
+.kalori-circle span{
+    font-size:14px;
+    color:#666;
+}
+
+.hasil-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:#f9fbff;
+    border-radius:14px;
+    padding:16px;
+    margin-bottom:14px;
+}
+
+.macro-card{
+    margin-top:25px;
+    width:100%;
+
+    background:white;
+    border-radius:24px;
+    padding:30px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.05);
+}
+
+.macro-top{
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
+.donut-chart{
+    width:220px;
+    height:220px;
+    border-radius:50%;
+
+    background:
+    conic-gradient(
+        #60a5fa 0% 20%,
+        #86efac 20% 70%,
+        #facc15 70% 100%
+    );
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.donut-center{
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    background:white;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    font-size:34px;
+    font-weight:700;
+    color:#102a5c;
+}
+
+.donut-center span{
+    font-size:14px;
+    color:#777;
+}
+
+.macro-grid{
+    flex:1;
+}
+
+.macro-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:#f9fbff;
+    padding:18px;
+    border-radius:14px;
+    margin-bottom:15px;
+}
+
