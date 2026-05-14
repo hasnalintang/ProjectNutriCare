@@ -17,67 +17,92 @@ if (!isset($_SESSION['nama'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
     <title>Dashboard NutriCare</title>
 </head>
 
 <body class="db-body">
     <div class="db-wrapper">
-        <aside class="db-sidebar">
-            <div class="db-logo">
-                NutriCare
+        <div class="sidebar">
+
+        <div>
+
+            <div class="logo-area">
+
+                <img src="assets/logo02.png" class="logo-img">
+
+                <h3>NutriCare</h3>
+
+                <p>Sistem Perhitungan Gizi <br>& Berat Badan</p>
+
             </div>
-            <ul class="db-menu">
 
-                <a href="dashboard.php" class="db-menu-link">
-                    <li class="db-active">
-                        <i class="fa-solid fa-table-columns"></i>
+            <ul class="menu">
+
+                <li>
+                    <a href="dashboard.php" class="active">
+                        <i class="fa-solid fa-house"></i>
                         Dashboard
-                    </li>
-                </a>
+                    </a>
+                </li>
 
-                <a href="bmi.php" class="db-menu-link">
-                    <li>
+                <li>
+                    <a href="bmi.php">
                         <i class="fa-solid fa-calculator"></i>
                         Hitung BMI
-                    </li>
-                </a>
+                    </a>
+                </li>
 
-                <a href="kalori.php" class="db-menu-link">
-                    <li>
+                <li>
+                    <a href="target.php">
+                        <i class="fa-solid fa-bullseye"></i>
+                        Target Berat
+                    </a>
+                </li>
+
+                <li>
+                    <a href="kalori.php">
                         <i class="fa-solid fa-fire"></i>
-                        Kalori Harian
-                    </li>
-                </a>
+                        Kebutuhan Kalori
+                    </a>
+                </li>
 
-                <a href="gizi.php" class="db-menu-link">
-                    <li>
-                        <i class="fa-solid fa-bowl-food"></i>
+                <li>
+                    <a href="rekomendasi.php">
+                        <i class="fa-solid fa-gem"></i>
                         Rekomendasi Gizi
-                    </li>
-                </a>
+                    </a>
+                </li>
 
-                <a href="riwayat.php" class="db-menu-link">
-                    <li>
-                        <i class="fa-solid fa-clock-rotate-left"></i>
+                <li>
+                    <a href="riwayat.php">
+                        <i class="fa-regular fa-clock"></i>
                         Riwayat
-                    </li>
-                </a>
+                    </a>
+                </li>
 
-                <a href="profil.php" class="db-menu-link">
-                    <li>
-                        <i class="fa-solid fa-user"></i>
-                        Profil
-                    </li>
-                </a>
+                <li>
+                    <a href="artikel.php">
+                        <i class="fa-regular fa-newspaper"></i>
+                        Artikel Kesehatan
+                    </a>
+                </li>
 
             </ul>
 
-            <a href="logout.php" class="db-logout">
-                <i class="fa-solid fa-right-from-bracket"></i>
-                Keluar
-            </a>
-        </aside>
+            <div class="hero-img">
+                <img src="assets/hero.png">
+            </div>
+
+        </div>
+
+        <a href="logout.php" class="logout-btn">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            Logout
+        </a>
+
+    </div>
 
         <main class="db-main">
             <div class="db-topbar">
@@ -90,9 +115,11 @@ if (!isset($_SESSION['nama'])) {
                     </p>
                 </div>
                 <div class="db-profile">
-                    <img src="./assets/profilenc.jpg">
-                    <span><?php echo $_SESSION['nama']; ?></span>
-                </div>
+                <img src="./assets/profilenc.jpg">
+                <span>
+                    Hai, <?php echo $_SESSION['nama']; ?>
+                </span>
+            </div>
             </div>
 
             <section class="db-hero">
@@ -105,9 +132,11 @@ if (!isset($_SESSION['nama'])) {
                         <p>
                             Pantau kondisi tubuhmu dan dapatkan rekomendasi terbaik.
                         </p>
+                        <a href="bmi.php">
                         <button class="btn db-btn-primary">
                             Hitung Sekarang →
                         </button>
+                        </a>
                     </div>
                 </div>
                 <img src="./assets/hero.png" class="db-hero-img">
@@ -199,7 +228,7 @@ if (!isset($_SESSION['nama'])) {
                                 Perbanyak konsumsi protein tanpa lemak
                                 dan sayuran hijau untuk menjaga massa otot.
                             </p>
-                            <a href="#">
+                            <a href="selengkapnya.php">
                                 Lihat Selengkapnya →
                             </a>
                         </div>
@@ -209,7 +238,7 @@ if (!isset($_SESSION['nama'])) {
         </main>
     </div>
 
-     <footer class="footer mt-2" id="tentang">
+     <footer class="footer-index mt-2" id="tentang">
         <div class="container d-flex justify-content-between flex-wrap">
 
             <div>
@@ -223,29 +252,29 @@ if (!isset($_SESSION['nama'])) {
             <div>
                 <h6>Menu</h6>
                 <p class="small">
-                    <l class="bii bi-house-fill">Home<br></l>
-                    <l class="bii bi-sliders">Fitur<br></l>
-                    <l class="bii bi-newspaper">Artikel<br></l>
-                    <l class="bii bi-info-circle">Tentang kami<br></l>
+                    <l class="bii bi-house-fill"> Home<br></l>
+                    <l class="bii bi-sliders"> Fitur<br></l>
+                    <l class="bii bi-newspaper"> Artikel<br></l>
+                    <l class="bii bi-info-circle"> Tentang kami<br></l>
                 </p>
             </div>
 
             <div>
                 <h6>Kontak</h6>
                 <p class="small">
-                    <l class="bii bi-exclamation-circle">info@nutricare.id <br></l>
-                    <l class="bii bi-person-circle">+62 812-3456-7890 <br></l>
-                    <l class="bii bi-geo-alt-fill">Indonesia<br></l>
+                    <l class="bii bi-exclamation-circle"> info@nutricare.id <br></l>
+                    <l class="bii bi-person-circle"> +62 812-3456-7890 <br></l>
+                    <l class="bii bi-geo-alt-fill"> Indonesia<br></l>
                 </p>
             </div>
 
             <div>
                 <h6>Ikuti Kami</h6>
                 <p class="small">
-                    <l class="bii bi-instagram">@nutricare.id<br></l>
-                    <l class="bii bi-twitter">@nutricare.id<br></l>
-                    <l class="bii bi-tiktok">@nutricare.id<br></l>
-                    <l class="bii bi-facebook">NutriCare<br></l>
+                    <l class="bii bi-instagram"> @nutricare.id<br></l>
+                    <l class="bii bi-twitter"> @nutricare.id<br></l>
+                    <l class="bii bi-tiktok"> @nutricare.id<br></l>
+                    <l class="bii bi-facebook"> NutriCare<br></l>
                 </p>
             </div>
 

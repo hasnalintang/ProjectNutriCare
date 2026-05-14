@@ -14,7 +14,7 @@ $target_berat = 0;
 $per_minggu = 0;
 $hasil_text = "Masukkan data terlebih dahulu";
 
-if(isset($_POST['hitung'])){
+if (isset($_POST['hitung'])) {
 
     $berat = $_POST['berat'];
     $tinggi = $_POST['tinggi'];
@@ -28,13 +28,13 @@ if(isset($_POST['hitung'])){
     $bmi = $berat / ($tinggi_meter * $tinggi_meter);
 
     // STATUS
-    if($bmi < 18.5){
+    if ($bmi < 18.5) {
         $status = "Kurus";
-    }elseif($bmi < 25){
+    } elseif ($bmi < 25) {
         $status = "Normal";
-    }elseif($bmi < 30){
+    } elseif ($bmi < 30) {
         $status = "Gemuk";
-    }else{
+    } else {
         $status = "Obesitas";
     }
 
@@ -43,11 +43,11 @@ if(isset($_POST['hitung'])){
     $bmi_max = 24.9 * ($tinggi_meter * $tinggi_meter);
 
     // MINGGU
-    if($durasi == "1 Bulan"){
+    if ($durasi == "1 Bulan") {
         $minggu = 4;
-    }elseif($durasi == "3 Bulan"){
+    } elseif ($durasi == "3 Bulan") {
         $minggu = 12;
-    }else{
+    } else {
         $minggu = 24;
     }
 
@@ -58,29 +58,28 @@ if(isset($_POST['hitung'])){
     $per_minggu = $selisih / $minggu;
 
     // HASIL
-    if($target_berat > $berat){
+    if ($target_berat > $berat) {
 
-        $hasil_text = "Anda perlu menaikkan +" . round($per_minggu,2) . " kg/minggu";
+        $hasil_text = "Anda perlu menaikkan +" . round($per_minggu, 2) . " kg/minggu";
+    } elseif ($target_berat < $berat) {
 
-    }elseif($target_berat < $berat){
-
-        $hasil_text = "Anda perlu menurunkan -" . round($per_minggu,2) . " kg/minggu";
-
-    }else{
+        $hasil_text = "Anda perlu menurunkan -" . round($per_minggu, 2) . " kg/minggu";
+    } else {
 
         $hasil_text = "Berat badan sudah sesuai target";
-
     }
-
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Target Berat Badan</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="css/target.css">
 
@@ -89,281 +88,286 @@ if(isset($_POST['hitung'])){
 
 <body>
 
-<div class="main-container">
+    <div class="main-container">
 
-    <div class="sidebar">
+        <div class="sidebar">
 
-        <div>
+            <div>
 
-            <div class="logo-area">
+                <div class="logo-area">
 
-                <img src="assets/logo02.png" class="logo-img">
+                    <img src="assets/logo02.png" class="logo-img">
 
-                <h3>NutriCare</h3>
+                    <h3>NutriCare</h3>
 
-                <p>
-                    Sistem Perhitungan Gizi
-                    <br>
-                    & Berat Badan
-                </p>
-
-            </div>
-
-            <ul class="menu">
-
-                <li>
-                    <a href="dashboard.php">
-                        <i class="fa-solid fa-house"></i>
-                        Dashboard
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <i class="fa-solid fa-calculator"></i>
-                        Hitung BMI
-                    </a>
-                </li>
-
-                <li>
-                    <a href="target.php" class="active">
-                        <i class="fa-solid fa-bullseye"></i>
-                        Target Berat
-                    </a>
-                </li>
-
-                <li>
-                    <a href="kalori.php">
-                        <i class="fa-solid fa-fire"></i>
-                        Kebutuhan Kalori
-                    </a>
-                </li>
-
-                <li>
-                    <a href="rekomendasi.php">
-                        <i class="fa-solid fa-gem"></i>
-                        Rekomendasi Gizi
-                    </a>
-                </li>
-
-                <li>
-                    <a href="riwayat.php">
-                        <i class="fa-regular fa-clock"></i>
-                        Riwayat
-                    </a>
-                </li>
-
-                <li>
-                    <a href="artikel.php">
-                        <i class="fa-regular fa-newspaper"></i>
-                        Artikel Kesehatan
-                    </a>
-                </li>
-
-            </ul>
-
-            <div class="hero-img">
-                <img src="assets/hero.png">
-            </div>
-
-        </div>
-
-        <a href="logout.php" class="logout-btn">
-            <i class="fa-solid fa-arrow-right-from-bracket"></i>
-            Logout
-        </a>
-
-    </div>
-
-    <div class="content">
-
-        <h1>Target Berat Badan</h1>
-
-        <div class="breadcrumb">
-            Dashboard / Target Berat
-        </div>
-
-        <form method="POST">
-
-            <div class="target-grid">
-
-                <!-- KIRI -->
-
-                <div class="card-target">
-
-                    <h2>Data Saat Ini</h2>
-
-                    <div class="form-group">
-
-                        <label>Berat Badan Saat Ini</label>
-
-                        <div class="input-flex">
-                            <input type="number" name="berat" required>
-                            <span>kg</span>
-                        </div>
-
-                    </div>
-
-                    <div class="form-group">
-
-                        <label>Tinggi Badan</label>
-
-                        <div class="input-flex">
-                            <input type="number" name="tinggi" required>
-                            <span>cm</span>
-                        </div>
-
-                    </div>
-
-                    <div class="bmi-box">
-
-                        <div>
-
-                            <small>BMI Saat Ini</small>
-
-                            <h3><?= round($bmi,1) ?></h3>
-
-                        </div>
-
-                        <span class="status">
-                            <?= $status ?>
-                        </span>
-
-                    </div>
+                    <p>
+                        Sistem Perhitungan Gizi
+                        <br>
+                        & Berat Badan
+                    </p>
 
                 </div>
 
-                <!-- TENGAH -->
+                <ul class="menu">
 
-                <div class="card-target">
+                    <li>
+                        <a href="dashboard.php">
+                            <i class="fa-solid fa-house"></i>
+                            Dashboard
+                        </a>
+                    </li>
 
-                    <h2>Target yang Ingin Dicapai</h2>
+                    <li>
+                        <a href="bmi.php">
+                            <i class="fa-solid fa-calculator"></i>
+                            Hitung BMI
+                        </a>
+                    </li>
 
-                    <div class="form-group">
+                    <li>
+                        <a href="target.php" class="active">
+                            <i class="fa-solid fa-bullseye"></i>
+                            Target Berat
+                        </a>
+                    </li>
 
-                        <label>Berat Badan Target</label>
+                    <li>
+                        <a href="kalori.php">
+                            <i class="fa-solid fa-fire"></i>
+                            Kebutuhan Kalori
+                        </a>
+                    </li>
 
-                        <div class="input-flex">
-                            <input type="number" name="target_berat" required>
-                            <span>kg</span>
-                        </div>
+                    <li>
+                        <a href="rekomendasi.php">
+                            <i class="fa-solid fa-gem"></i>
+                            Rekomendasi Gizi
+                        </a>
+                    </li>
 
-                    </div>
+                    <li>
+                        <a href="riwayat.php">
+                            <i class="fa-regular fa-clock"></i>
+                            Riwayat
+                        </a>
+                    </li>
 
-                    <div class="form-group">
+                    <li>
+                        <a href="artikel.php">
+                            <i class="fa-regular fa-newspaper"></i>
+                            Artikel Kesehatan
+                        </a>
+                    </li>
 
-                        <label>Target dalam</label>
+                </ul>
 
-                        <select name="durasi">
-                            <option>1 Bulan</option>
-                            <option>3 Bulan</option>
-                            <option>6 Bulan</option>
-                        </select>
-
-                    </div>
-
-                    <div class="form-group">
-
-                        <label>Tujuan</label>
-
-                        <select name="tujuan">
-                            <option>Menurunkan Berat Badan</option>
-                            <option>Menaikkan Berat Badan</option>
-                        </select>
-
-                    </div>
-
-                    <button type="submit" name="hitung" class="btn-target">
-
-                        <i class="fa-solid fa-calculator"></i>
-                        Hitung Target
-
-                    </button>
-
+                <div class="hero-img">
+                    <img src="assets/hero.png">
                 </div>
 
-                <!-- KANAN -->
+            </div>
 
-                <div class="hasil-card">
+            <a href="logout.php" class="logout-btn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                Logout
+            </a>
 
-                    <h2>Hasil Perhitungan Target</h2>
+        </div>
 
-                    <div class="target-alert">
+        <div class="content">
 
-                        <h3>
-                            Target Anda:
-                            <?= $target_berat ?> kg
-                        </h3>
+            <h1>Target Berat Badan</h1>
 
-                        <p>
-                            <?= $hasil_text ?>
-                        </p>
+            <p class="text-muted mb-0">
+                Dashboard >
+                <span class="text-primary fw-semibold">
+                    Target Berat Badan
+                </span>
+            </p>
+            <br>
 
-                    </div>
+            <form method="POST">
 
-                    <div class="hasil-item">
+                <div class="target-grid">
 
-                        <div>
+                    <!-- KIRI -->
 
-                            <small>Berat Ideal (BMI Normal)</small>
+                    <div class="card-target">
 
-                            <h4>
-                                <?= round($bmi_min,1) ?> -
-                                <?= round($bmi_max,1) ?> kg
-                            </h4>
+                        <h2>Data Saat Ini</h2>
+
+                        <div class="form-group">
+
+                            <label>Berat Badan Saat Ini</label>
+
+                            <div class="input-flex">
+                                <input type="number" name="berat" required>
+                                <span>kg</span>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Tinggi Badan</label>
+
+                            <div class="input-flex">
+                                <input type="number" name="tinggi" required>
+                                <span>cm</span>
+                            </div>
+
+                        </div>
+
+                        <div class="bmi-box">
+
+                            <div>
+
+                                <small>BMI Saat Ini</small>
+
+                                <h3><?= round($bmi, 1) ?></h3>
+
+                            </div>
+
+                            <span class="status">
+                                <?= $status ?>
+                            </span>
 
                         </div>
 
                     </div>
 
-                    <div class="hasil-item">
+                    <!-- TENGAH -->
 
-                        <div>
+                    <div class="card-target">
 
-                            <small>Berat yang Harus Dicapai</small>
+                        <h2>Target yang Ingin Dicapai</h2>
 
-                            <h4>
+                        <div class="form-group">
+
+                            <label>Berat Badan Target</label>
+
+                            <div class="input-flex">
+                                <input type="number" name="target_berat" required>
+                                <span>kg</span>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Target dalam</label>
+
+                            <select name="durasi">
+                                <option>1 Bulan</option>
+                                <option>3 Bulan</option>
+                                <option>6 Bulan</option>
+                            </select>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Tujuan</label>
+
+                            <select name="tujuan">
+                                <option>Menurunkan Berat Badan</option>
+                                <option>Menaikkan Berat Badan</option>
+                            </select>
+
+                        </div>
+
+                        <button type="submit" name="hitung" class="btn-target">
+
+                            <i class="fa-solid fa-calculator"></i>
+                            Hitung Target
+
+                        </button>
+
+                    </div>
+
+                    <!-- KANAN -->
+
+                    <div class="hasil-card">
+
+                        <h2>Hasil Perhitungan Target</h2>
+
+                        <div class="target-alert">
+
+                            <h3>
+                                Target Anda:
                                 <?= $target_berat ?> kg
-                            </h4>
+                            </h3>
+
+                            <p>
+                                <?= $hasil_text ?>
+                            </p>
 
                         </div>
 
-                    </div>
+                        <div class="hasil-item">
 
-                    <div class="hasil-item">
+                            <div>
 
-                        <div>
+                                <small>Berat Ideal (BMI Normal)</small>
 
-                            <small>Perubahan Per Minggu</small>
+                                <h4>
+                                    <?= round($bmi_min, 1) ?> -
+                                    <?= round($bmi_max, 1) ?> kg
+                                </h4>
 
-                            <h4>
-                                <?= round($per_minggu,2) ?> kg/minggu
-                            </h4>
+                            </div>
 
                         </div>
 
-                    </div>
+                        <div class="hasil-item">
 
-                    <div class="tips-box">
+                            <div>
 
-                        <strong>Tips</strong>
+                                <small>Berat yang Harus Dicapai</small>
 
-                        <p>
-                            Perubahan berat badan yang sehat adalah
-                            0.5 - 1 kg per minggu.
-                        </p>
+                                <h4>
+                                    <?= $target_berat ?> kg
+                                </h4>
+
+                            </div>
+
+                        </div>
+
+                        <div class="hasil-item">
+
+                            <div>
+
+                                <small>Perubahan Per Minggu</small>
+
+                                <h4>
+                                    <?= round($per_minggu, 2) ?> kg/minggu
+                                </h4>
+
+                            </div>
+
+                        </div>
+
+                        <div class="tips-box">
+
+                            <strong>Tips</strong>
+
+                            <p>
+                                Perubahan berat badan yang sehat adalah
+                                0.5 - 1 kg per minggu.
+                            </p>
+
+                        </div>
 
                     </div>
 
                 </div>
 
-            </div>
+            </form>
 
-        </form>
+        </div>
 
     </div>
-
-</div>
 
 </body>
+
 </html>

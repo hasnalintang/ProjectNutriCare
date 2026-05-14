@@ -1,0 +1,61 @@
+/* style login dan regis */
+.log {
+    background: url('../assets/backgroundlog.png') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.auth-card {
+    background: rgba(255, 255, 255, 0.9); 
+    backdrop-filter: blur(10px); 
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.auth-header h2 {
+    color: #4a148c;
+    font-weight: 800;
+}
+
+.form-control {
+    border-radius: 15px;
+    padding: 12px 20px;
+    border: 1px solid #ddd;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.btn-custom {
+    border-radius: 15px;
+    padding: 12px;
+    font-weight: 700;
+    border: none;
+    transition: 0.4s;
+    color: white;
+}
+
+.btn-login {
+    background:#b883f9 ;
+}
+
+.btn-regis {
+    background: #b883f9;
+}
+
+.btn-custom:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}

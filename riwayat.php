@@ -18,10 +18,13 @@ $query = mysqli_query($koneksi, "
 
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Riwayat</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="css/riwayat.css">
 
@@ -30,178 +33,183 @@ $query = mysqli_query($koneksi, "
 
 <body>
 
-<div class="main-container">
+    <div class="main-container">
 
-    <div class="sidebar">
+        <div class="sidebar">
 
-        <div>
+            <div>
 
-            <div class="logo-area">
+                <div class="logo-area">
 
-                <img src="assets/logo02.png" class="logo-img">
+                    <img src="assets/logo02.png" class="logo-img">
 
-                <h3>NutriCare</h3>
+                    <h3>NutriCare</h3>
 
-                <p>Sistem Perhitungan Gizi <br>& Berat Badan</p>
+                    <p>Sistem Perhitungan Gizi <br>& Berat Badan</p>
+
+                </div>
+
+                <ul class="menu">
+
+                    <li>
+                        <a href="dashboard.php">
+                            <i class="fa-solid fa-house"></i>
+                            Dashboard
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="bmi.php">
+                            <i class="fa-solid fa-calculator"></i>
+                            Hitung BMI
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="target.php">
+                            <i class="fa-solid fa-bullseye"></i>
+                            Target Berat
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="kalori.php">
+                            <i class="fa-solid fa-fire"></i>
+                            Kebutuhan Kalori
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="rekomendasi.php">
+                            <i class="fa-solid fa-gem"></i>
+                            Rekomendasi Gizi
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="riwayat.php" class="active">
+                            <i class="fa-regular fa-clock"></i>
+                            Riwayat
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="artikel.php">
+                            <i class="fa-regular fa-newspaper"></i>
+                            Artikel Kesehatan
+                        </a>
+                    </li>
+
+                </ul>
+
+                <div class="hero-img">
+                    <img src="assets/hero.png">
+                </div>
 
             </div>
 
-            <ul class="menu">
+            <a href="logout.php" class="logout-btn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                Logout
+            </a>
 
-                <li>
-                    <a href="dashboard.php">
-                        <i class="fa-solid fa-house"></i>
-                        Dashboard
-                    </a>
-                </li>
+        </div>
 
-                <li>
-                    <a href="#">
-                        <i class="fa-solid fa-calculator"></i>
-                        Hitung BMI
-                    </a>
-                </li>
+        <div class="content">
 
-                <li>
-                    <a href="target.php">
-                        <i class="fa-solid fa-bullseye"></i>
-                        Target Berat
-                    </a>
-                </li>
+            <h1>Riwayat Perhitungan</h1>
 
-                <li>
-                    <a href="kalori.php">
-                        <i class="fa-solid fa-fire"></i>
-                        Kebutuhan Kalori
-                    </a>
-                </li>
+            <p class="text-muted mb-0">
+                Dashboard >
+                <span class="text-primary fw-semibold">
+                    Riwayat
+                </span>
+            </p>
+            <br>
 
-                <li>
-                    <a href="rekomendasi.php">
-                        <i class="fa-solid fa-gem"></i>
-                        Rekomendasi Gizi
-                    </a>
-                </li>
+            <div class="table-card">
 
-                <li>
-                    <a href="riwayat.php" class="active">
-                        <i class="fa-regular fa-clock"></i>
-                        Riwayat
-                    </a>
-                </li>
+                <table>
 
-                <li>
-                    <a href="artikel.php">
-                        <i class="fa-regular fa-newspaper"></i>
-                        Artikel Kesehatan
-                    </a>
-                </li>
+                    <thead>
 
-            </ul>
+                        <tr>
+                            <th>Tanggal</th>
+                            <th>Umur</th>
+                            <th>BB</th>
+                            <th>TB</th>
+                            <th>BMI</th>
+                            <th>Status</th>
+                            <th>Kalori</th>
+                            <th>Aktivitas</th>
+                        </tr>
 
-            <div class="hero-img">
-                <img src="assets/hero.png">
+                    </thead>
+
+                    <tbody>
+
+                        <?php while ($data = mysqli_fetch_assoc($query)) { ?>
+
+                            <tr>
+
+                                <td>
+                                    <?= date('d M Y', strtotime($data['created_at'])) ?>
+                                </td>
+
+                                <td>
+                                    <?= $data['umur'] ?> th
+                                </td>
+
+                                <td>
+                                    <?= $data['berat_badan'] ?> kg
+                                </td>
+
+                                <td>
+                                    <?= $data['tinggi_badan'] ?> cm
+                                </td>
+
+                                <td>
+                                    <?= round($data['bmi'], 1) ?>
+                                </td>
+
+                                <td>
+
+                                    <?php
+                                    $status = $data['status_badan'];
+
+                                    if ($status == "Normal") {
+                                        echo "<span class='status normal'>$status</span>";
+                                    } elseif ($status == "Kurus") {
+                                        echo "<span class='status kurus'>$status</span>";
+                                    } else {
+                                        echo "<span class='status gemuk'>$status</span>";
+                                    }
+                                    ?>
+
+                                </td>
+
+                                <td>
+                                    <?= round($data['kalori_harian']) ?> kkal
+                                </td>
+
+                                <td>
+                                    <?= $data['aktivitas'] ?>
+                                </td>
+
+                            </tr>
+
+                        <?php } ?>
+
+                    </tbody>
+
+                </table>
+
             </div>
 
         </div>
 
-        <a href="logout.php" class="logout-btn">
-            <i class="fa-solid fa-arrow-right-from-bracket"></i>
-            Logout
-        </a>
-
     </div>
-
-    <div class="content">
-
-        <h1>Riwayat Perhitungan</h1>
-
-        <div class="breadcrumb">
-            Dashboard / Riwayat
-        </div>
-
-        <div class="table-card">
-
-            <table>
-
-                <thead>
-
-                    <tr>
-                        <th>Tanggal</th>
-                        <th>Umur</th>
-                        <th>BB</th>
-                        <th>TB</th>
-                        <th>BMI</th>
-                        <th>Status</th>
-                        <th>Kalori</th>
-                        <th>Aktivitas</th>
-                    </tr>
-
-                </thead>
-
-                <tbody>
-
-                    <?php while($data = mysqli_fetch_assoc($query)) { ?>
-
-                    <tr>
-
-                        <td>
-                            <?= date('d M Y', strtotime($data['created_at'])) ?>
-                        </td>
-
-                        <td>
-                            <?= $data['umur'] ?> th
-                        </td>
-
-                        <td>
-                            <?= $data['berat_badan'] ?> kg
-                        </td>
-
-                        <td>
-                            <?= $data['tinggi_badan'] ?> cm
-                        </td>
-
-                        <td>
-                            <?= round($data['bmi'],1) ?>
-                        </td>
-
-                        <td>
-
-                            <?php
-                            $status = $data['status_badan'];
-
-                            if($status == "Normal"){
-                                echo "<span class='status normal'>$status</span>";
-                            }elseif($status == "Kurus"){
-                                echo "<span class='status kurus'>$status</span>";
-                            }else{
-                                echo "<span class='status gemuk'>$status</span>";
-                            }
-                            ?>
-
-                        </td>
-
-                        <td>
-                            <?= round($data['kalori_harian']) ?> kkal
-                        </td>
-
-                        <td>
-                            <?= $data['aktivitas'] ?>
-                        </td>
-
-                    </tr>
-
-                    <?php } ?>
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-    </div>
-
-</div>
 
 </body>
+
 </html>

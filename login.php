@@ -11,7 +11,7 @@ if(isset($_POST['login'])){
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $query = mysqli_query($conn,
+    $query = mysqli_query($koneksi,
     "SELECT * FROM users
     WHERE email='$email'
     AND password='$password'");
@@ -28,7 +28,7 @@ if(isset($_POST['login'])){
 
     } else {
 
-        $cek = mysqli_query($conn,
+        $cek = mysqli_query($koneksi,
         "SELECT * FROM users WHERE email='$email'");
 
         if(mysqli_num_rows($cek) == 0){
@@ -59,7 +59,7 @@ if(isset($_POST['login'])){
     <meta charset="UTF-8">
     <title>Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/log.css">
 </head>
 
 <body class="log">

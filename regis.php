@@ -23,7 +23,7 @@ if (isset($_POST['register'])) {
     } else {
 
         $cek = mysqli_query(
-            $conn,
+            $koneksi,
             "SELECT * FROM users WHERE email='$email'"
         );
 
@@ -37,7 +37,7 @@ if (isset($_POST['register'])) {
         } else {
 
             $query = mysqli_query(
-                $conn,
+                $koneksi,
                 "INSERT INTO users(nama,email,password,role)
             VALUES('$username','$email','$password','user')"
             );
@@ -70,7 +70,7 @@ if (isset($_POST['register'])) {
     <meta charset="UTF-8">
     <title>Daftar</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/log.css">
 </head>
 <body class="log">
     <div class="auth-card">
