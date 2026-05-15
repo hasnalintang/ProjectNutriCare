@@ -102,249 +102,257 @@ if (isset($_POST['hitung'])) {
     <meta charset="UTF-8">
 
     <meta name="viewport"
-    content="width=device-width, initial-scale=1.0">
+        content="width=device-width, initial-scale=1.0">
 
     <title>Kebutuhan Kalori</title>
 
     <link rel="stylesheet" href="css/kalori.css">
 
     <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
 
 <body>
 
-<button class="menu-toggle" onclick="toggleSidebar()">
-    <i class="fa-solid fa-bars"></i>
-</button>
+    <button class="menu-toggle" onclick="toggleSidebar()">
+        <i class="fa-solid fa-bars"></i>
+    </button>
 
-<div class="main-container">
+    <div class="main-container">
 
-    <div class="sidebar" id="sidebar">
+        <div class="sidebar" id="sidebar">
 
-        <div>
+            <div>
 
-            <div class="logo-area">
+                <div class="logo-area">
 
-                <img src="assets/logo02.png"
-                class="logo-img">
+                    <img src="assets/blank.png"
+                        class="logo-img">
 
-                <div class="logo-text">
+                    <div class="logo-text">
 
-                    <h3>NutriCare</h3>
+                        <h3>NutriCare</h3>
 
-                    <p>
-                        Sistem Perhitungan Gizi <br>
-                        & Berat Badan
-                    </p>
+                        <p>
+                            Sistem Perhitungan Gizi <br>
+                            & Berat Badan
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <ul class="menu">
+
+                    <li>
+                        <a href="dashboard.php">
+                            <i class="fa-solid fa-house"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="bmi.php">
+                            <i class="fa-solid fa-calculator"></i>
+                            <span>Hitung BMI</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="target.php">
+                            <i class="fa-solid fa-bullseye"></i>
+                            <span>Target Berat</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="kalori.php" class="active">
+                            <i class="fa-solid fa-fire"></i>
+                            <span>Kebutuhan Kalori</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="rekomendasi.php">
+                            <i class="fa-solid fa-gem"></i>
+                            <span>Rekomendasi Gizi</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="riwayat.php">
+                            <i class="fa-regular fa-clock"></i>
+                            <span>Riwayat</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="artikel.php">
+                            <i class="fa-regular fa-newspaper"></i>
+                            <span>Artikel Kesehatan</span>
+                        </a>
+                    </li>
+
+                </ul>
+
+                <div class="hero-img">
+                    <img src="assets/hero.png">
+                </div>
+
+            </div>
+
+            <a href="logout.php" class="logout-btn">
+
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+
+                <span>Logout</span>
+
+            </a>
+
+        </div>
+
+        <div class="content">
+
+            <h1>Kebutuhan Kalori Harian</h1>
+
+            <p class="text-muted mb-4">
+                Dashboard >
+                <span style="color:#3563E9;font-weight:600;">
+                    Hitung Kalori
+                </span>
+            </p>
+
+            <div class="top-grid">
+
+                <div class="card-kalori">
+
+                    <h2>Data Perhitungan</h2>
+
+                    <form method="POST">
+
+                        <div class="form-group">
+                            <label>Usia</label>
+
+                            <input type="number"
+                                name="usia" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Jenis Kelamin</label>
+
+                            <select name="gender" required>
+                                <option value="">Pilih</option>
+                                <option>Laki-laki</option>
+                                <option>Perempuan</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Berat Badan</label>
+
+                            <input type="number"
+                                name="berat" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Tinggi Badan</label>
+
+                            <input type="number"
+                                name="tinggi" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Aktivitas</label>
+
+                            <select name="aktivitas" required>
+                                <option value="">Pilih</option>
+                                <option>Ringan</option>
+                                <option>Sedang</option>
+                                <option>Berat</option>
+                            </select>
+                        </div>
+
+                        <button type="submit"
+                            name="hitung"
+                            class="btn-hitung">
+
+                            <i class="fa-solid fa-calculator"></i>
+
+                            Hitung Kalori
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+                <div class="hasil-card">
+
+                    <h2>Hasil Kalori</h2>
+
+                    <div class="kalori-circle">
+
+                        <?= round($tdee) ?>
+
+                        <span>kkal</span>
+
+                    </div>
+
+                    <div class="hasil-item">
+                        <span>BMR</span>
+                        <strong><?= round($bmr) ?> kkal</strong>
+                    </div>
+
+                    <div class="hasil-item">
+                        <span>TDEE</span>
+                        <strong><?= round($tdee) ?> kkal</strong>
+                    </div>
+
+                    <div class="hasil-item">
+                        <span>Defisit</span>
+                        <strong><?= round($defisit) ?> kkal</strong>
+                    </div>
 
                 </div>
 
             </div>
 
-            <ul class="menu">
+            <div class="macro-card">
 
-                <li>
-                    <a href="dashboard.php">
-                        <i class="fa-solid fa-house"></i>
-                        <span>Dashboard</span>
-                    </a>
-                </li>
+                <h2>Makronutrien</h2>
 
-                <li>
-                    <a href="bmi.php">
-                        <i class="fa-solid fa-calculator"></i>
-                        <span>Hitung BMI</span>
-                    </a>
-                </li>
+                <div class="macro-grid">
 
-                <li>
-                    <a href="target.php">
-                        <i class="fa-solid fa-bullseye"></i>
-                        <span>Target Berat</span>
-                    </a>
-                </li>
+                    <div class="macro-item">
+                        <span>Protein</span>
+                        <strong><?= round($proteinGram) ?> g</strong>
+                    </div>
 
-                <li>
-                    <a href="kalori.php" class="active">
-                        <i class="fa-solid fa-fire"></i>
-                        <span>Kebutuhan Kalori</span>
-                    </a>
-                </li>
+                    <div class="macro-item">
+                        <span>Karbohidrat</span>
+                        <strong><?= round($karboGram) ?> g</strong>
+                    </div>
 
-                <li>
-                    <a href="rekomendasi.php">
-                        <i class="fa-solid fa-gem"></i>
-                        <span>Rekomendasi Gizi</span>
-                    </a>
-                </li>
+                    <div class="macro-item">
+                        <span>Lemak</span>
+                        <strong><?= round($lemakGram) ?> g</strong>
+                    </div>
 
-                <li>
-                    <a href="riwayat.php">
-                        <i class="fa-regular fa-clock"></i>
-                        <span>Riwayat</span>
-                    </a>
-                </li>
+                </div>
 
-                <li>
-                    <a href="artikel.php">
-                        <i class="fa-regular fa-newspaper"></i>
-                        <span>Artikel Kesehatan</span>
-                    </a>
-                </li>
-
-            </ul>
-
-            <div class="hero-img">
-                <img src="assets/hero.png">
             </div>
 
         </div>
-
-        <a href="logout.php" class="logout-btn">
-
-            <i class="fa-solid fa-arrow-right-from-bracket"></i>
-
-            <span>Logout</span>
-
-        </a>
 
     </div>
 
-    <div class="content">
-
-        <h1>Kebutuhan Kalori Harian</h1>
-
-        <div class="top-grid">
-
-            <div class="card-kalori">
-
-                <h2>Data Perhitungan</h2>
-
-                <form method="POST">
-
-                    <div class="form-group">
-                        <label>Usia</label>
-
-                        <input type="number"
-                        name="usia" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Jenis Kelamin</label>
-
-                        <select name="gender" required>
-                            <option value="">Pilih</option>
-                            <option>Laki-laki</option>
-                            <option>Perempuan</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Berat Badan</label>
-
-                        <input type="number"
-                        name="berat" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Tinggi Badan</label>
-
-                        <input type="number"
-                        name="tinggi" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Aktivitas</label>
-
-                        <select name="aktivitas" required>
-                            <option value="">Pilih</option>
-                            <option>Ringan</option>
-                            <option>Sedang</option>
-                            <option>Berat</option>
-                        </select>
-                    </div>
-
-                    <button type="submit"
-                    name="hitung"
-                    class="btn-hitung">
-
-                        <i class="fa-solid fa-calculator"></i>
-
-                        Hitung Kalori
-
-                    </button>
-
-                </form>
-
-            </div>
-
-            <div class="hasil-card">
-
-                <h2>Hasil Kalori</h2>
-
-                <div class="kalori-circle">
-
-                    <?= round($tdee) ?>
-
-                    <span>kkal</span>
-
-                </div>
-
-                <div class="hasil-item">
-                    <span>BMR</span>
-                    <strong><?= round($bmr) ?> kkal</strong>
-                </div>
-
-                <div class="hasil-item">
-                    <span>TDEE</span>
-                    <strong><?= round($tdee) ?> kkal</strong>
-                </div>
-
-                <div class="hasil-item">
-                    <span>Defisit</span>
-                    <strong><?= round($defisit) ?> kkal</strong>
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="macro-card">
-
-            <h2>Makronutrien</h2>
-
-            <div class="macro-grid">
-
-                <div class="macro-item">
-                    <span>Protein</span>
-                    <strong><?= round($proteinGram) ?> g</strong>
-                </div>
-
-                <div class="macro-item">
-                    <span>Karbohidrat</span>
-                    <strong><?= round($karboGram) ?> g</strong>
-                </div>
-
-                <div class="macro-item">
-                    <span>Lemak</span>
-                    <strong><?= round($lemakGram) ?> g</strong>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-<script>
-function toggleSidebar(){
-    document.getElementById("sidebar").classList.toggle("active");
-}
-</script>
+    <script>
+        function toggleSidebar() {
+            document.getElementById("sidebar").classList.toggle("active");
+        }
+    </script>
 
 </body>
+
 </html>

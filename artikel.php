@@ -77,249 +77,253 @@ foreach ($artikel as $a) {
     <meta charset="UTF-8">
 
     <meta name="viewport"
-    content="width=device-width, initial-scale=1.0">
+        content="width=device-width, initial-scale=1.0">
 
     <title>Artikel Kesehatan</title>
 
     <link rel="stylesheet"
-    href="css/artikel.css">
+        href="css/artikel.css">
 
     <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
 
 <body>
 
-<button class="menu-toggle"
-onclick="toggleSidebar()">
+    <button class="menu-toggle"
+        onclick="toggleSidebar()">
 
-    <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-bars"></i>
 
-</button>
+    </button>
 
-<div class="main-container">
+    <div class="main-container">
 
-    <div class="sidebar" id="sidebar">
+        <div class="sidebar" id="sidebar">
 
-        <div>
+            <div>
 
-            <div class="logo-area">
+                <div class="logo-area">
 
-                <img src="assets/logo02.png"
-                class="logo-img">
+                    <img src="assets/blank.png"
+                        class="logo-img">
 
-                <div class="logo-text">
+                    <div class="logo-text">
 
-                    <h3>NutriCare</h3>
+                        <h3>NutriCare</h3>
 
-                    <p>
-                        Sistem Perhitungan Gizi <br>
-                        & Berat Badan
-                    </p>
+                        <p>
+                            Sistem Perhitungan Gizi <br>
+                            & Berat Badan
+                        </p>
 
+                    </div>
+
+                </div>
+
+                <ul class="menu">
+
+                    <li>
+                        <a href="dashboard.php">
+                            <i class="fa-solid fa-house"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="bmi.php">
+                            <i class="fa-solid fa-calculator"></i>
+                            <span>Hitung BMI</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="target.php">
+                            <i class="fa-solid fa-bullseye"></i>
+                            <span>Target Berat</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="kalori.php">
+                            <i class="fa-solid fa-fire"></i>
+                            <span>Kebutuhan Kalori</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="rekomendasi.php">
+                            <i class="fa-solid fa-gem"></i>
+                            <span>Rekomendasi Gizi</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="riwayat.php">
+                            <i class="fa-regular fa-clock"></i>
+                            <span>Riwayat</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="artikel.php" class="active">
+                            <i class="fa-regular fa-newspaper"></i>
+                            <span>Artikel Kesehatan</span>
+                        </a>
+                    </li>
+
+                </ul>
+
+                <div class="hero-img">
+                    <img src="assets/hero.png">
                 </div>
 
             </div>
 
-            <ul class="menu">
+            <a href="logout.php"
+                class="logout-btn">
 
-                <li>
-                    <a href="dashboard.php">
-                        <i class="fa-solid fa-house"></i>
-                        <span>Dashboard</span>
-                    </a>
-                </li>
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
 
-                <li>
-                    <a href="bmi.php">
-                        <i class="fa-solid fa-calculator"></i>
-                        <span>Hitung BMI</span>
-                    </a>
-                </li>
+                <span>Logout</span>
 
-                <li>
-                    <a href="target.php">
-                        <i class="fa-solid fa-bullseye"></i>
-                        <span>Target Berat</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="kalori.php">
-                        <i class="fa-solid fa-fire"></i>
-                        <span>Kebutuhan Kalori</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="rekomendasi.php">
-                        <i class="fa-solid fa-gem"></i>
-                        <span>Rekomendasi Gizi</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="riwayat.php">
-                        <i class="fa-regular fa-clock"></i>
-                        <span>Riwayat</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="artikel.php" class="active">
-                        <i class="fa-regular fa-newspaper"></i>
-                        <span>Artikel Kesehatan</span>
-                    </a>
-                </li>
-
-            </ul>
-
-            <div class="hero-img">
-                <img src="assets/hero.png">
-            </div>
+            </a>
 
         </div>
 
-        <a href="logout.php"
-        class="logout-btn">
+        <div class="content">
 
-            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            <h1>Artikel Kesehatan</h1>
 
-            <span>Logout</span>
+            <p class="text-muted mb-4">
+                Dashboard >
+                <span style="color:#3563E9;font-weight:600;">
+                    Artikel Kesehatan
+                </span>
+            </p>
 
-        </a>
+            <form method="GET">
 
-    </div>
+                <div class="top-bar">
 
-    <div class="content">
+                    <div class="search-box">
 
-        <h1>Artikel Kesehatan</h1>
+                        <i class="fa-solid fa-magnifying-glass"></i>
 
-        <p class="breadcrumb">
-            Dashboard / Artikel Kesehatan
-        </p>
+                        <input
+                            type="text"
+                            name="cari"
+                            placeholder="Cari artikel..."
+                            value="<?= $cari ?>">
 
-        <form method="GET">
-
-            <div class="top-bar">
-
-                <div class="search-box">
-
-                    <i class="fa-solid fa-magnifying-glass"></i>
-
-                    <input
-                    type="text"
-                    name="cari"
-                    placeholder="Cari artikel..."
-                    value="<?= $cari ?>">
-
-                </div>
-
-                <select
-                name="kategori"
-                onchange="this.form.submit()">
-
-                    <option value="semua">
-                        Semua Kategori
-                    </option>
-
-                    <option value="nutrisi">
-                        Nutrisi
-                    </option>
-
-                    <option value="diet">
-                        Diet Sehat
-                    </option>
-
-                    <option value="olahraga">
-                        Olahraga
-                    </option>
-
-                </select>
-
-            </div>
-
-        </form>
-
-        <a href="detail_artikel.php?id=1"
-        class="artikel-link">
-
-            <div class="featured-card">
-
-                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c">
-
-                <div class="featured-content">
-
-                    <span>Artikel Unggulan</span>
-
-                    <h2>
-                        10 Tips Pola Makan Sehat untuk Hidup Lebih Baik
-                    </h2>
-
-                    <p>
-                        Pola makan sehat membantu menjaga tubuh tetap sehat.
-                    </p>
-
-                    <div class="featured-info">
-                        <small>20 Mei 2024</small>
-                        <small>8 menit baca</small>
                     </div>
 
+                    <select
+                        name="kategori"
+                        onchange="this.form.submit()">
+
+                        <option value="semua">
+                            Semua Kategori
+                        </option>
+
+                        <option value="nutrisi">
+                            Nutrisi
+                        </option>
+
+                        <option value="diet">
+                            Diet Sehat
+                        </option>
+
+                        <option value="olahraga">
+                            Olahraga
+                        </option>
+
+                    </select>
+
                 </div>
 
-            </div>
+            </form>
 
-        </a>
+            <a href="detail_artikel.php?id=1"
+                class="artikel-link">
 
-        <div class="artikel-list">
+                <div class="featured-card">
 
-            <?php foreach ($hasil as $row) { ?>
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c">
 
-            <a href="detail_artikel.php?id=<?= $row['id'] ?>"
-            class="artikel-link">
+                    <div class="featured-content">
 
-                <div class="artikel-item">
+                        <span>Artikel Unggulan</span>
 
-                    <img src="<?= $row['gambar'] ?>">
-
-                    <div class="artikel-content">
-
-                        <h3>
-                            <?= $row['judul'] ?>
-                        </h3>
+                        <h2>
+                            10 Tips Pola Makan Sehat untuk Hidup Lebih Baik
+                        </h2>
 
                         <p>
-                            <?= $row['deskripsi'] ?>
+                            Pola makan sehat membantu menjaga tubuh tetap sehat.
                         </p>
 
-                        <small>
-                            <?= $row['tanggal'] ?>
-                            •
-                            <?= $row['waktu'] ?>
-                        </small>
+                        <div class="featured-info">
+                            <small>20 Mei 2024</small>
+                            <small>8 menit baca</small>
+                        </div>
 
                     </div>
-
-                    <i class="fa-solid fa-chevron-right"></i>
 
                 </div>
 
             </a>
 
-            <?php } ?>
+            <div class="artikel-list">
+
+                <?php foreach ($hasil as $row) { ?>
+
+                    <a href="detail_artikel.php?id=<?= $row['id'] ?>"
+                        class="artikel-link">
+
+                        <div class="artikel-item">
+
+                            <img src="<?= $row['gambar'] ?>">
+
+                            <div class="artikel-content">
+
+                                <h3>
+                                    <?= $row['judul'] ?>
+                                </h3>
+
+                                <p>
+                                    <?= $row['deskripsi'] ?>
+                                </p>
+
+                                <small>
+                                    <?= $row['tanggal'] ?>
+                                    •
+                                    <?= $row['waktu'] ?>
+                                </small>
+
+                            </div>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </div>
+
+                    </a>
+
+                <?php } ?>
+
+            </div>
 
         </div>
 
     </div>
 
-</div>
-
-<script>
-function toggleSidebar(){
-    document.getElementById("sidebar").classList.toggle("active");
-}
-</script>
+    <script>
+        function toggleSidebar() {
+            document.getElementById("sidebar").classList.toggle("active");
+        }
+    </script>
 
 </body>
+
 </html>

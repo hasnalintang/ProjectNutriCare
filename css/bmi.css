@@ -210,19 +210,6 @@ body{
     margin-bottom:25px;
 }
 
-.db-profile{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-
-.db-profile img{
-    width:45px;
-    height:45px;
-    border-radius:50%;
-    object-fit:cover;
-}
-
 /* ALERT */
 
 .bmi-alert{

@@ -1,0 +1,202 @@
+/* style selengkapnya */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.learn-body {
+    background: #f5f7fc;
+    font-family: Arial, sans-serif;
+}
+
+
+.db-topbar {
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0px;
+}
+
+.container{
+    max-width:1250px;
+    padding:0px 0px;
+}
+
+.left-head {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:0px;
+    margin-left: 50px;
+}
+
+.back-btn {
+    font-size: 23px;
+    color: #3b82f6;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.left-head h2 {
+    font-weight: 700;
+    margin: 0;
+}
+
+.left-head p {
+    margin: 0;
+    color: gray;
+    font-size: 14px;
+}
+
+.hero-learn {
+    background: #edf4ff;
+    padding: 50px;
+    border-radius: 30px;
+    margin-bottom: 35px;
+}
+
+.guide {
+    background: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    color: #2563eb;
+}
+
+.hero-learn h1 {
+    margin-top: 30px;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 1.3;
+    color: #0f2c69;
+}
+
+.hero-learn p {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #4d607a;
+}
+
+
+.hero-learn img {
+    width: 90%;
+    max-width:450px;
+}
+
+.step-area{
+    display:flex;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.step{
+    flex:1;
+    min-width:200px;
+}
+
+.judul {
+    font-weight: 700;
+    color: #0f2c69;
+    margin-bottom: 20px;
+}
+
+.fitur-card {
+    background: white;
+    padding:20px;
+    border-radius: 20px;
+    height: 100%;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .05);
+    transition: .3s;
+}
+
+.fitur-card:hover {
+    transform: translateY(-5px);
+}
+
+.icon {
+    width: 65px;
+    height: 65px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.blue {
+    background: #dbeafe;
+    color: #2563eb;
+}
+
+.orange {
+    background: #ffedd5;
+    color: #f97316;
+}
+
+.green {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.purple {
+    background: #f3e8ff;
+    color: #9333ea;
+}
+
+.fitur-card a {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+
+.artikel-card {
+    background: white;
+    padding: 15px;
+    border-radius: 20px;
+    display: flex;
+    gap: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .05);
+}
+
+.artikel-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.cara-box {
+    background: #edf4ff;
+    padding: 40px;
+    border-radius: 30px;
+    margin: 60px 0;
+}
+
+.step-area {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 35px;
+}
+
+.step {
+    text-align: center;
+    width: 23%;
+}
+
+.circle {
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 50%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #2563eb;
+}

@@ -184,7 +184,7 @@ onclick="toggleSidebar()">
 
             <div class="logo-area">
 
-                <img src="assets/logo02.png"
+                <img src="assets/blank.png"
                 class="logo-img">
 
                 <div class="logo-text">

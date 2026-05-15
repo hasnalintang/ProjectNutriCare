@@ -38,7 +38,7 @@ if (!isset($_SESSION['nama'])) {
 
             <div class="logo-area">
 
-                <img src="assets/logo02.png" class="logo-img">
+                <img src="assets/blank.png" class="logo-img">
 
                 <div class="logo-text">
                     <h3>NutriCare</h3>

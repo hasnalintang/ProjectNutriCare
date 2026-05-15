@@ -160,14 +160,8 @@ body{
 
 .content h1{
     font-size:40px;
-    color:#0f172a;
+    color:#1B2559;
     margin-bottom:5px;
-}
-
-.breadcrumb{
-    color:#94a3b8;
-    margin-bottom:25px;
-    font-size:14px;
 }
 
 /* GRID */

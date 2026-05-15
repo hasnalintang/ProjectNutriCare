@@ -65,11 +65,8 @@ if(isset($_POST['hitung'])){
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Hitung BMI</title>
-
     <link rel="stylesheet" href="css/bmi.css">
-
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -89,7 +86,7 @@ if(isset($_POST['hitung'])){
 
             <div class="logo-area">
 
-                <img src="assets/logo02.png" class="logo-img">
+                <img src="assets/blank.png" class="logo-img">
 
                 <div class="logo-text">
 
@@ -176,27 +173,16 @@ if(isset($_POST['hitung'])){
 
             <div>
 
-                <h3 class="fw-bold mb-1">
+                <h1 class="fw-bold mb-1" style="color:#1B2559;">
                     Perhitungan BMI
-                </h3>
+                </h1>
 
-                <p class="text-muted mb-0">
+                <p class="text-muted mb-4">
                     Dashboard >
-                    <span class="text-primary fw-semibold">
-                        Hitung BMI
+                    <span style="color:#3563E9;font-weight:600;">
+                        Perhitungan BMI
                     </span>
                 </p>
-
-            </div>
-
-            <div class="db-profile">
-
-                <img src="./assets/profilenc.jpg">
-
-                <span>
-                    Hai,
-                    <?php echo $_SESSION['nama']; ?>
-                </span>
 
             </div>
 

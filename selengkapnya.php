@@ -1,229 +1,232 @@
 <?php
-
 session_start();
-include 'koneksi.php';
 
 if (!isset($_SESSION['nama'])) {
-
     header("Location: login.php");
 }
 ?>
-<?php
-$current = basename($_SERVER['PHP_SELF']);
-?>
-
 
 <!DOCTYPE html>
 <html lang="id">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Pelajari Selengkapnya | NutriCare</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pelajari Selengkapnya</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="./css/more.css">
-    <link rel="stylesheet" href="./css/shared.css">
-
+    <link rel="stylesheet" href="css/selengkapnya.css">
 </head>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<body>
-<div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarMenu" style="width:270px;">
-    <div class="offcanvas-header border-bottom pb-3">
-        <div class="d-flex align-items-center gap-2">
-            <img src="assets/logo02.png" style="width:36px;">
-            <span style="font-weight:700;font-size:18px;color:#2563eb;">NutriCare</span>
-        </div>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-    </div>
-    <div class="offcanvas-body d-flex flex-column justify-content-between p-0">
-        <div class="px-3 pt-3">
-            <p class="text-muted" style="font-size:12px;padding:0 8px;">Sistem Perhitungan Gizi & Berat Badan</p>
-            <ul class="menu mt-3">
-                <li>
-                    <a href="dashboard.php" class="<?= $current=='dashboard.php' ? 'active' : '' ?>">
-                        <i class="fa-solid fa-house"></i> Dashboard
-                    </a>
-                </li>
-                <li>
-                    <a href="bmi.php" class="<?= $current=='bmi.php' ? 'active' : '' ?>">
-                        <i class="fa-solid fa-calculator"></i> Hitung BMI
-                    </a>
-                </li>
-                <li>
-                    <a href="target.php" class="<?= $current=='target.php' ? 'active' : '' ?>">
-                        <i class="fa-solid fa-bullseye"></i> Target Berat
-                    </a>
-                </li>
-                <li>
-                    <a href="kalori.php" class="<?= $current=='kalori.php' ? 'active' : '' ?>">
-                        <i class="fa-solid fa-fire"></i> Kebutuhan Kalori
-                    </a>
-                </li>
-                <li>
-                    <a href="rekomendasi.php" class="<?= $current=='rekomendasi.php' ? 'active' : '' ?>">
-                        <i class="fa-solid fa-gem"></i> Rekomendasi Gizi
-                    </a>
-                </li>
-                <li>
-                    <a href="riwayat.php" class="<?= $current=='riwayat.php' ? 'active' : '' ?>">
-                        <i class="fa-regular fa-clock"></i> Riwayat
-                    </a>
-                </li>
-                <li>
-                    <a href="artikel.php" class="<?= $current=='artikel.php' ? 'active' : '' ?>">
-                        <i class="fa-regular fa-newspaper"></i> Artikel Kesehatan
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="px-3 pb-4">
-            <div class="text-center mb-3">
-                <img src="assets/hero.png" style="width:100%;max-width:180px;opacity:0.85;">
-            </div>
-            <a href="logout.php" class="logout-btn">
-                <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+<body class="learn-body">
+    <div class="db-topbar">
+        <div class="left-head">
+            <a href="dashboard.php" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
             </a>
-        </div>
-    </div>
-</div>
-
-
-    <main class="db-main">
-        <div class="db-topbar">
             <div>
-                <h3 class="fw-bold mb-1">
-                    Perhitungan BMI
-                </h3>
-
-                <p class="text-muted mb-0">
+                <h1 class="fw-bold mb-1" style="color:#1B2559;">
+                    Selengkapnya
+                </h1>
+                <p class="text-muted mb-1 m-left-1">
                     Dashboard >
-                    <span class="text-primary fw-semibold">
-                        Hitung BMI
+                    <span style="color:#3563E9;font-weight:600;">
+                        Selengkapnya
                     </span>
                 </p>
-            </div>
 
-            <div class="db-profile">
-                <img src="./assets/profilenc.jpg">
-                <span>
-                    Hai,
-                    <?php echo $_SESSION['nama']; ?>
-                </span>
             </div>
 
         </div>
+    </div>
 
-
-    <section class="container">
-        <div class="learn-hero">
+    <div class="container py-4">
+        <div class="hero-learn">
             <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <span class="learn-badge">
+                <div class="col-md-6">
+                    <span class="guide">
                         NutriCare Guide
                     </span>
                     <h1>
-                        Pelajari Gizi & Kesehatan
-                        Lebih Mudah
+                        Kenali tubuhmu,<br>
+                        mulai dari informasi yang tepat.
                     </h1>
                     <p>
-                        Temukan informasi lengkap tentang BMI,
-                        kalori, berat badan ideal, dan pola hidup sehat
-                        untuk menjaga kesehatanmu.
+                        Di sini kamu bisa mempelajari lebih dalam tentang
+                        kesehatan, gizi, dan cara menjaga berat badan ideal.
                     </p>
-                    <button class="btn learn-btn">Mulai Membaca<i class="fa-solid fa-arrow-right"></i></button>
                 </div>
-
-                <div class="col-lg-6 text-center">
-                    <img src="assets/hero-learn.png" class="learn-hero-img">
+                <div class="col-md-6 text-end">
+                    <img src="./assets/buku.png">
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="container">
+        <h3 class="judul">
+            Fitur yang Tersedia
+        </h3>
         <div class="row g-4">
-            <div class="col-md-4">
-                <div class="learn-card">
-                    <img src="assets/bmi.png">
-                    <h4>Apa itu BMI?</h4>
+            <div class="col-md-3">
+                <div class="fitur-card">
+                    <div class="icon blue">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+                    <h5>Hitung BMI</h5>
                     <p>
-                        Pelajari cara menghitung BMI
-                        dan memahami status berat badan.
+                        Hitung indeks massa tubuh
+                        untuk mengetahui status
+                        berat badan kamu.
                     </p>
                     <a href="bmi.php">
-                        Pelajari →
+                        Pelajari lebih lanjut →
                     </a>
                 </div>
             </div>
-
-            <div class="col-md-4">
-                <div class="learn-card">
-                    <img src="assets/kalori.png">
-                    <h4>Kebutuhan Kalori</h4>
+            <div class="col-md-3">
+                <div class="fitur-card">
+                    <div class="icon orange">
+                        <i class="fa-solid fa-fire"></i>
+                    </div>
+                    <h5>Kalori Harian</h5>
                     <p>
-                        Cari tahu kebutuhan energi harian
-                        sesuai aktivitasmu.
+                        Temukan kebutuhan kalori
+                        harian sesuai aktivitas.
                     </p>
                     <a href="kalori.php">
-                        Pelajari →
+                        Pelajari lebih lanjut →
                     </a>
                 </div>
             </div>
-
-            <div class="col-md-4">
-                <div class="learn-card">
-                    <img src="assets/nutrisi.png">
-                    <h4>Pola Gizi Seimbang</h4>
+            <div class="col-md-3">
+                <div class="fitur-card">
+                    <div class="icon green">
+                        <i class="fa-solid fa-bowl-food"></i>
+                    </div>
+                    <h5>Rekomendasi Gizi</h5>
                     <p>
-                        Panduan protein, lemak,
-                        karbohidrat dan nutrisi harian.
+                        Dapatkan rekomendasi
+                        makanan sehat setiap hari.
                     </p>
                     <a href="rekomendasi.php">
-                        Pelajari →
+                        Pelajari lebih lanjut →
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="fitur-card">
+                    <div class="icon purple">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h5>Riwayat</h5>
+                    <p>
+                        Lihat riwayat perkembangan
+                        dan hasil perhitunganmu.
+                    </p>
+                    <a href="riwayat.php">
+                        Pelajari lebih lanjut →
                     </a>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="container">
-        <div class="learn-box">
-            <div class="row align-items-center">
-                <div class="col-lg-5">
-                    <img src="assets/artikel.png"
-                        class="img-fluid">
+        <h3 class="judul mt-5">
+            Artikel Kesehatan Populer
+        </h3>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="artikel-card">
+                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438">
+                    <div>
+                        <h5>
+                            Pentingnya Minum Air Putih
+                            Setiap Hari
+                        </h5>
+                        <p>
+                            Air putih membantu tubuh
+                            tetap optimal.
+                        </p>
+                        <span>12 Mei 2025</span>
+                    </div>
                 </div>
-                <div class="col-lg-7">
-                    <h2>
-                        Mengapa menjaga kesehatan penting?
-                    </h2>
-                    <p>
-                        Kesehatan yang baik membantu tubuh
-                        berfungsi optimal, meningkatkan energi,
-                        dan menjaga kualitas hidup.
-                    </p>
-                    <ul>
-                        <li>
-                            Pola makan sehat
-                        </li>
-                        <li>
-                            Aktivitas fisik rutin
-                        </li>
-                        <li>
-                            Tidur cukup
-                        </li>
-                        <li>
-                            Minum air cukup
-                        </li>
-                    </ul>
+            </div>
+            <div class="col-md-4">
+                <div class="artikel-card">
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c">
+                    <div>
+                        <h5>
+                            Tips Pola Makan
+                            Sehat dan Seimbang
+                        </h5>
+                        <p>
+                            Mulai pola makan sehat
+                            untuk hidup lebih baik.
+                        </p>
+                        <span>10 Mei 2025</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="artikel-card">
+                    <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a">
+                    <div>
+                        <h5>
+                            Olahraga Ringan yang
+                            Bisa Kamu Coba
+                        </h5>
+                        <p>
+                            Aktivitas sederhana
+                            yang baik untuk tubuh.
+                        </p>
+                        <span>8 Mei 2025</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-    </main>
+        <div class="cara-box">
+            <h3>
+                Cara Menggunakan NutriCare
+            </h3>
+            <div class="step-area">
+                <div class="step">
+                    <div class="circle">
+                        <i class="fa-regular fa-user"></i>
+                    </div>
+                    <h6>1. Buat Akun</h6>
+                    <p>
+                        Daftar akun NutriCare
+                        gratis
+                    </p>
+                </div>
+                <div class="step">
+                    <div class="circle">
+                        <i class="fa-regular fa-clipboard"></i>
+                    </div>
+                    <h6>2. Isi Data</h6>
+                    <p>
+                        Isi data tubuhmu
+                        dengan lengkap
+                    </p>
+                </div>
+                <div class="step">
+                    <div class="circle">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+                    <h6>3. Hitung</h6>
+                    <p>
+                        Dapatkan hasil
+                        analisis kesehatan
+                    </p>
+                </div>
+                <div class="step">
+                    <div class="circle">
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                    <h6>4. Jaga Kesehatan</h6>
+                    <p>
+                        Ikuti saran
+                        yang diberikan
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 
