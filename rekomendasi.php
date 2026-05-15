@@ -31,242 +31,284 @@ $lemak = round(($kalori * 0.30) / 9);
 
 $status = $data['status_badan'];
 ?>
+
 <!DOCTYPE html>
 <html lang="id">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
     <title>Rekomendasi Gizi</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+    href="css/rekomendasi.css">
 
-    <link rel="stylesheet" href="css/rekomendasi.css">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
 
-    <div class="main-container">
+<button class="menu-toggle" onclick="toggleSidebar()">
+    <i class="fa-solid fa-bars"></i>
+</button>
 
-        <div class="sidebar">
+<div class="main-container">
 
-            <div>
+    <!-- SIDEBAR -->
 
-                <div class="logo-area">
+    <div class="sidebar" id="sidebar">
 
-                    <img src="assets/logo02.png" class="logo-img">
+        <div>
+
+            <div class="logo-area">
+
+                <img src="assets/logo02.png"
+                class="logo-img">
+
+                <div class="logo-text">
 
                     <h3>NutriCare</h3>
 
-                    <p>Sistem Perhitungan Gizi <br>& Berat Badan</p>
+                    <p>
+                        Sistem Perhitungan Gizi <br>
+                        & Berat Badan
+                    </p>
 
-                </div>
-
-                <ul class="menu">
-
-                    <li>
-                        <a href="dashboard.php">
-                            <i class="fa-solid fa-house"></i>
-                            Dashboard
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="bmi.php">
-                            <i class="fa-solid fa-calculator"></i>
-                            Hitung BMI
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="target.php">
-                            <i class="fa-solid fa-bullseye"></i>
-                            Target Berat
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="kalori.php">
-                            <i class="fa-solid fa-fire"></i>
-                            Kebutuhan Kalori
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="rekomendasi.php" class="active">
-                            <i class="fa-solid fa-gem"></i>
-                            Rekomendasi Gizi
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="riwayat.php">
-                            <i class="fa-regular fa-clock"></i>
-                            Riwayat
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="artikel.php">
-                            <i class="fa-regular fa-newspaper"></i>
-                            Artikel Kesehatan
-                        </a>
-                    </li>
-
-                </ul>
-
-                <div class="hero-img">
-                    <img src="assets/hero.png">
                 </div>
 
             </div>
 
-            <a href="logout.php" class="logout-btn">
-                <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                Logout
-            </a>
+            <ul class="menu">
+
+                <li>
+                    <a href="dashboard.php">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="bmi.php">
+                        <i class="fa-solid fa-calculator"></i>
+                        <span>Hitung BMI</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="target.php">
+                        <i class="fa-solid fa-bullseye"></i>
+                        <span>Target Berat</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="kalori.php">
+                        <i class="fa-solid fa-fire"></i>
+                        <span>Kebutuhan Kalori</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="rekomendasi.php" class="active">
+                        <i class="fa-solid fa-gem"></i>
+                        <span>Rekomendasi Gizi</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="riwayat.php">
+                        <i class="fa-regular fa-clock"></i>
+                        <span>Riwayat</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="artikel.php">
+                        <i class="fa-regular fa-newspaper"></i>
+                        <span>Artikel Kesehatan</span>
+                    </a>
+                </li>
+
+            </ul>
+
+            <div class="hero-img">
+                <img src="assets/hero.png">
+            </div>
 
         </div>
 
-        <div class="content">
+        <a href="logout.php" class="logout-btn">
 
-            <h1>Rekomendasi Gizi</h1>
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
 
-            <p class="text-muted mb-0">
-                Dashboard >
-                <span class="text-primary fw-semibold">
-                    Rekomendasi Gizi
-                </span>
-            </p>
-            <br>
+            <span>Logout</span>
 
-            <div class="alert-box">
-                <i class="fa-solid fa-circle-check"></i>
-                Rekomendasi gizi dibuat berdasarkan data tubuh Anda agar lebih personal dan sesuai kebutuhan harian.
+        </a>
+
+    </div>
+
+    <!-- CONTENT -->
+
+    <div class="content">
+
+        <h1>Rekomendasi Gizi</h1>
+
+        <p class="text-muted mb-4">
+            Dashboard >
+            <span class="text-primary fw-semibold">
+                Rekomendasi Gizi
+            </span>
+        </p>
+
+        <div class="alert-box">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            Rekomendasi gizi dibuat berdasarkan data tubuh Anda agar lebih personal dan sesuai kebutuhan harian.
+
+        </div>
+
+        <!-- SUMMARY -->
+
+        <div class="summary-grid">
+
+            <div class="summary-card">
+                <h3><?= $data['umur'] ?></h3>
+                <p>Usia</p>
             </div>
 
-            <div class="summary-grid">
-
-                <div class="summary-card">
-                    <h3><?= $data['umur'] ?></h3>
-                    <p>Usia</p>
-                </div>
-
-                <div class="summary-card">
-                    <h3><?= round($data['bmi'], 1) ?></h3>
-                    <p>BMI</p>
-                </div>
-
-                <div class="summary-card">
-                    <h3><?= $data['aktivitas'] ?></h3>
-                    <p>Aktivitas</p>
-                </div>
-
-                <div class="summary-card">
-                    <h3><?= $status ?></h3>
-                    <p>Status Badan</p>
-                </div>
-
+            <div class="summary-card">
+                <h3><?= round($data['bmi'],1) ?></h3>
+                <p>BMI</p>
             </div>
 
-            <div class="kalori-card">
-
-                <div class="circle-box">
-                    <div class="circle">
-                        <?= $kalori ?>
-                        <span>kkal</span>
-                    </div>
-                </div>
-
-                <div class="macro-list">
-
-                    <div class="macro-item">
-                        <span>Protein (20%)</span>
-                        <strong><?= $protein ?> g</strong>
-                    </div>
-
-                    <div class="macro-item">
-                        <span>Karbohidrat (50%)</span>
-                        <strong><?= $karbo ?> g</strong>
-                    </div>
-
-                    <div class="macro-item">
-                        <span>Lemak (30%)</span>
-                        <strong><?= $lemak ?> g</strong>
-                    </div>
-
-                </div>
-
+            <div class="summary-card">
+                <h3><?= $data['aktivitas'] ?></h3>
+                <p>Aktivitas</p>
             </div>
 
-            <div class="makanan-grid">
+            <div class="summary-card">
+                <h3><?= $status ?></h3>
+                <p>Status Badan</p>
+            </div>
 
-                <div class="makanan-card">
+        </div>
 
-                    <h2>Sumber Protein</h2>
+        <!-- KALORI -->
 
-                    <ul>
-                        <li>Dada Ayam</li>
-                        <li>Telur</li>
-                        <li>Ikan Salmon</li>
-                        <li>Tempe</li>
-                    </ul>
+        <div class="kalori-card">
 
-                </div>
+            <div class="circle-box">
 
-                <div class="makanan-card">
-
-                    <h2>Sumber Karbohidrat</h2>
-
-                    <ul>
-                        <li>Nasi Merah</li>
-                        <li>Oatmeal</li>
-                        <li>Kentang</li>
-                        <li>Roti Gandum</li>
-                    </ul>
-
-                </div>
-
-                <div class="makanan-card">
-
-                    <h2>Lemak Sehat</h2>
-
-                    <ul>
-                        <li>Alpukat</li>
-                        <li>Kacang Almond</li>
-                        <li>Minyak Zaitun</li>
-                        <li>Chia Seed</li>
-                    </ul>
-
+                <div class="circle">
+                    <?= $kalori ?>
+                    <span>kkal</span>
                 </div>
 
             </div>
 
-            <div class="tips-card">
+            <div class="macro-list">
 
-                <div class="tips-text">
-
-                    <h2>Tips NutriCare</h2>
-
-                    <ul>
-                        <li>Minum air putih minimal 2 liter per hari.</li>
-                        <li>Konsumsi sayur dan buah setiap hari.</li>
-                        <li>Kurangi makanan tinggi gula dan gorengan.</li>
-                        <li>Lakukan olahraga ringan minimal 30 menit per hari.</li>
-                    </ul>
-
+                <div class="macro-item">
+                    <span>Protein (20%)</span>
+                    <strong><?= $protein ?> g</strong>
                 </div>
 
-                <img src="assets/hero.png">
+                <div class="macro-item">
+                    <span>Karbohidrat (50%)</span>
+                    <strong><?= $karbo ?> g</strong>
+                </div>
+
+                <div class="macro-item">
+                    <span>Lemak (30%)</span>
+                    <strong><?= $lemak ?> g</strong>
+                </div>
 
             </div>
+
+        </div>
+
+        <!-- MAKANAN -->
+
+        <div class="makanan-grid">
+
+            <div class="makanan-card">
+
+                <h2>Sumber Protein</h2>
+
+                <ul>
+                    <li>Dada Ayam</li>
+                    <li>Telur</li>
+                    <li>Ikan Salmon</li>
+                    <li>Tempe</li>
+                </ul>
+
+            </div>
+
+            <div class="makanan-card">
+
+                <h2>Sumber Karbohidrat</h2>
+
+                <ul>
+                    <li>Nasi Merah</li>
+                    <li>Oatmeal</li>
+                    <li>Kentang</li>
+                    <li>Roti Gandum</li>
+                </ul>
+
+            </div>
+
+            <div class="makanan-card">
+
+                <h2>Lemak Sehat</h2>
+
+                <ul>
+                    <li>Alpukat</li>
+                    <li>Kacang Almond</li>
+                    <li>Minyak Zaitun</li>
+                    <li>Chia Seed</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <!-- TIPS -->
+
+        <div class="tips-card">
+
+            <div class="tips-text">
+
+                <h2>Tips NutriCare</h2>
+
+                <ul>
+                    <li>Minum air putih minimal 2 liter per hari.</li>
+                    <li>Konsumsi sayur dan buah setiap hari.</li>
+                    <li>Kurangi makanan tinggi gula dan gorengan.</li>
+                    <li>Lakukan olahraga ringan minimal 30 menit per hari.</li>
+                </ul>
+
+            </div>
+
+            <img src="assets/hero.png">
 
         </div>
 
     </div>
 
-</body>
+</div>
 
+<script>
+function toggleSidebar(){
+    document.getElementById("sidebar").classList.toggle("active");
+}
+</script>
+
+</body>
 </html>

@@ -1,317 +1,382 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
 
 body{
-    background: #f4f7fe;
+    background:#F5F7FF;
+    overflow-x:hidden;
 }
 
 .main-container{
-    display: flex;
-    min-height: 100vh;
+    display:flex;
+}
+
+/* TOGGLE */
+
+.menu-toggle{
+    position:fixed;
+    top:20px;
+    left:20px;
+    z-index:999;
+    background:#3563E9;
+    color:white;
+    border:none;
+    width:45px;
+    height:45px;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:18px;
 }
 
 /* SIDEBAR */
 
 .sidebar{
-    width: 260px;
-    background: #fff;
-    padding: 25px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-right: 1px solid #e5e7eb;
+    width:90px;
+    height:100vh;
+    background:white;
+    padding:20px 15px;
+    position:fixed;
+    overflow:hidden;
+    transition:0.3s;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    border-right:1px solid #eee;
+}
+
+.sidebar.active{
+    width:270px;
 }
 
 .logo-area{
-    margin-bottom: 30px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:40px;
 }
 
 .logo-img{
-    width: 120px;
-    margin-bottom: 10px;
+    width:45px;
+    min-width:45px;
 }
 
-.logo-area h3{
-    font-size: 24px;
-    color: #2563eb;
-    margin-bottom: 5px;
+.logo-text{
+    opacity:0;
+    transition:0.3s;
+    white-space:nowrap;
 }
 
-.logo-area p{
-    font-size: 13px;
-    color: #6b7280;
-    line-height: 1.5;
+.sidebar.active .logo-text{
+    opacity:1;
+}
+
+.logo-text h3{
+    color:#3563E9;
+    font-size:24px;
+}
+
+.logo-text p{
+    color:#888;
+    font-size:12px;
 }
 
 .menu{
-    list-style: none;
+    list-style:none;
 }
 
 .menu li{
-    margin-bottom: 10px;
+    margin-bottom:12px;
 }
 
 .menu li a{
-    text-decoration: none;
-    color: #374151;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 14px 16px;
-    border-radius: 12px;
-    transition: 0.3s;
-    font-size: 14px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    text-decoration:none;
+    color:#555;
+    padding:14px;
+    border-radius:14px;
+    transition:0.3s;
+    white-space:nowrap;
 }
 
-.menu li a:hover{
-    background: #eff6ff;
-    color: #2563eb;
-}
-
+.menu li a:hover,
 .menu li a.active{
-    background: #2563eb;
-    color: #fff;
+    background:#3563E9;
+    color:white;
+}
+
+.menu li a span{
+    opacity:0;
+    transition:0.3s;
+}
+
+.sidebar.active .menu li a span{
+    opacity:1;
 }
 
 .hero-img{
-    margin-top: 40px;
-    text-align: center;
+    margin-top:25px;
+    text-align:center;
 }
 
 .hero-img img{
-    width: 170px;
+    width:100%;
 }
 
 .logout-btn{
-    text-decoration: none;
-    color: #ef4444;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    text-decoration:none;
+    background:#3563E9;
+    color:white;
+    padding:14px;
+    border-radius:14px;
+}
+
+.logout-btn span{
+    opacity:0;
+    transition:0.3s;
+}
+
+.sidebar.active .logout-btn span{
+    opacity:1;
 }
 
 /* CONTENT */
 
 .content{
-    flex: 1;
-    padding: 30px;
+    margin-left:90px;
+    padding:40px;
+    width:100%;
+    transition:0.3s;
 }
 
 .content h1{
-    font-size: 40px;
-    color: #0f172a;
-    margin-bottom: 5px;
+    font-size:40px;
+    color:#0f172a;
+    margin-bottom:5px;
 }
 
 .breadcrumb{
-    color: #94a3b8;
-    margin-bottom: 25px;
-    font-size: 14px;
+    color:#94a3b8;
+    margin-bottom:25px;
+    font-size:14px;
 }
 
 /* GRID */
 
 .target-grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 25px;
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:25px;
 }
 
 /* CARD */
 
 .card-target,
 .hasil-card{
-    background: #fff;
-    border-radius: 24px;
-    padding: 28px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    background:white;
+    border-radius:24px;
+    padding:28px;
+    box-shadow:0 4px 20px rgba(0,0,0,0.05);
 }
 
 .card-target h2,
 .hasil-card h2{
-    font-size: 24px;
-    margin-bottom: 25px;
-    color: #0f172a;
+    font-size:24px;
+    margin-bottom:25px;
+    color:#0f172a;
 }
 
 /* FORM */
 
 .form-group{
-    margin-bottom: 22px;
+    margin-bottom:22px;
 }
 
 .form-group label{
-    display: block;
-    margin-bottom: 10px;
-    font-size: 14px;
-    color: #374151;
-    font-weight: 500;
+    display:block;
+    margin-bottom:10px;
+    font-size:14px;
+    color:#374151;
+    font-weight:500;
 }
 
 .input-flex{
-    display: flex;
-    align-items: center;
-    border: 1px solid #d1d5db;
-    border-radius: 14px;
-    overflow: hidden;
-    background: #fff;
+    display:flex;
+    align-items:center;
+    border:1px solid #d1d5db;
+    border-radius:14px;
+    overflow:hidden;
+    background:white;
 }
 
 .input-flex input{
-    flex: 1;
-    padding: 15px;
-    border: none;
-    outline: none;
-    font-size: 15px;
+    flex:1;
+    padding:15px;
+    border:none;
+    outline:none;
+    font-size:15px;
 }
 
 .input-flex span{
-    padding: 15px 18px;
-    background: #f8fafc;
-    color: #64748b;
-    font-size: 14px;
-    border-left: 1px solid #d1d5db;
+    padding:15px 18px;
+    background:#f8fafc;
+    color:#64748b;
+    font-size:14px;
+    border-left:1px solid #d1d5db;
 }
 
 select{
-    width: 100%;
-    padding: 15px;
-    border-radius: 14px;
-    border: 1px solid #d1d5db;
-    outline: none;
-    font-size: 14px;
-    background: #fff;
+    width:100%;
+    padding:15px;
+    border-radius:14px;
+    border:1px solid #d1d5db;
+    outline:none;
+    font-size:14px;
+    background:white;
 }
 
 /* BMI BOX */
 
 .bmi-box{
-    background: #f8fafc;
-    border-radius: 16px;
-    padding: 18px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
+    background:#f8fafc;
+    border-radius:16px;
+    padding:18px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:20px;
 }
 
 .bmi-box small{
-    color: #64748b;
+    color:#64748b;
 }
 
 .bmi-box h3{
-    margin-top: 5px;
-    font-size: 26px;
-    color: #0f172a;
+    margin-top:5px;
+    font-size:26px;
+    color:#0f172a;
 }
 
 .status{
-    background: #dcfce7;
-    color: #16a34a;
-    padding: 8px 14px;
-    border-radius: 999px;
-    font-size: 13px;
-    font-weight: 600;
+    background:#dcfce7;
+    color:#16a34a;
+    padding:8px 14px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:600;
 }
 
 /* BUTTON */
 
 .btn-target{
-    width: 100%;
-    padding: 16px;
-    border: none;
-    border-radius: 14px;
-    background: #2563eb;
-    color: #fff;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s;
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:14px;
+    background:#2563eb;
+    color:white;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
 }
 
 .btn-target:hover{
-    background: #1d4ed8;
+    background:#1d4ed8;
 }
 
 /* HASIL */
 
 .target-alert{
-    background: #ecfdf5;
-    border-radius: 18px;
-    padding: 20px;
-    margin-bottom: 22px;
+    background:#ecfdf5;
+    border-radius:18px;
+    padding:20px;
+    margin-bottom:22px;
 }
 
 .target-alert h3{
-    color: #166534;
-    margin-bottom: 8px;
+    color:#166534;
+    margin-bottom:8px;
 }
 
 .target-alert p{
-    color: #15803d;
-    font-size: 14px;
+    color:#15803d;
+    font-size:14px;
 }
 
 .hasil-item{
-    background: #f8fafc;
-    border-radius: 18px;
-    padding: 18px;
-    margin-bottom: 18px;
+    background:#f8fafc;
+    border-radius:18px;
+    padding:18px;
+    margin-bottom:18px;
 }
 
 .hasil-item small{
-    color: #64748b;
-    display: block;
-    margin-bottom: 6px;
+    color:#64748b;
+    display:block;
+    margin-bottom:6px;
 }
 
 .hasil-item h4{
-    color: #0f172a;
-    font-size: 22px;
+    color:#0f172a;
+    font-size:22px;
 }
 
 /* TIPS */
 
 .tips-box{
-    background: #eff6ff;
-    border-radius: 18px;
-    padding: 20px;
-    margin-top: 20px;
+    background:#eff6ff;
+    border-radius:18px;
+    padding:20px;
+    margin-top:20px;
 }
 
 .tips-box strong{
-    color: #2563eb;
-    display: block;
-    margin-bottom: 8px;
+    color:#2563eb;
+    display:block;
+    margin-bottom:8px;
 }
 
 .tips-box p{
-    color: #475569;
-    font-size: 14px;
-    line-height: 1.6;
+    color:#475569;
+    font-size:14px;
+    line-height:1.6;
 }
 
 /* RESPONSIVE */
 
-@media(max-width: 1100px){
+@media(max-width:1100px){
 
     .target-grid{
-        grid-template-columns: 1fr;
+        grid-template-columns:1fr;
     }
 
+}
+
+@media(max-width:768px){
+
     .sidebar{
-        display: none;
+        width:0;
+        padding:20px 0;
+    }
+
+    .sidebar.active{
+        width:250px;
+        padding:20px 15px;
     }
 
     .content{
-        padding: 20px;
+        margin-left:0;
+        padding:20px;
     }
 
 }
