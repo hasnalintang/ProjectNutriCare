@@ -18,13 +18,14 @@ h1 {
     margin-bottom: 0px;
 }
 
-.card {
+.fitur-card {
     border-radius: 15px;
-    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
-.card:hover {
-    transform: translateY(-5px);
+.fitur-img {
+    width: 40px;
+    height: 40px;
 }
 
 .bg-primary {

@@ -45,7 +45,7 @@
 
                 <div class="mt-4">
                     <a href="login.php" class="btn btn-primary me-2 px-4">Mulai Sekarang</a>
-                    <a href="...." class="btn btn-outline-primary px-4">Pelajari Lebih Lanjut</a>
+                    <a href="selengkapnya.php" class="btn btn-outline-primary px-4">Pelajari Lebih Lanjut</a>
                 </div>
 
                 <div class="mt-3 small text-muted bii">
