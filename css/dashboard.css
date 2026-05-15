@@ -390,27 +390,6 @@ body{
     font-weight:600;
 }
 
-/* FOOTER */
-
-.footer{
-    background:#173F9A;
-    color:white;
-    padding:40px;
-    margin-top:40px;
-}
-
-.footer-grid{
-    display:grid;
-    grid-template-columns:2fr 1fr 1fr;
-    gap:40px;
-}
-
-.footer p,
-.footer small{
-    color:#ddd;
-    margin-top:10px;
-}
-
 /* RESPONSIVE */
 
 @media(max-width:992px){

@@ -306,49 +306,6 @@ if (!isset($_SESSION['nama'])) {
 
 </div>
 
-<footer class="footer">
-
-    <div class="footer-grid">
-
-        <div>
-
-            <img src="assets/logoo2.png" width="180">
-
-            <p>
-                Platform perhitungan gizi dan rekomendasi kesehatan
-                untuk hidup lebih sehat.
-            </p>
-
-            <small>
-                © 2026 NutriCare
-            </small>
-
-        </div>
-
-        <div>
-
-            <h4>Menu</h4>
-
-            <p>Home</p>
-            <p>Fitur</p>
-            <p>Artikel</p>
-
-        </div>
-
-        <div>
-
-            <h4>Kontak</h4>
-
-            <p>info@nutricare.id</p>
-            <p>+62 812-3456-7890</p>
-            <p>Indonesia</p>
-
-        </div>
-
-    </div>
-
-</footer>
-
 <script>
 function toggleSidebar(){
 
