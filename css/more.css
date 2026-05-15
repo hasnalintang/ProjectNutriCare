@@ -122,236 +122,139 @@ font-family:Segoe UI;
 }
 
 .learn-nav{
-
 background:white;
-
 padding:18px;
-
 border-radius:20px;
-
 margin:20px;
-
 box-shadow:0 4px 15px rgba(0,0,0,.05);
 
 }
 
 .learn-logo{
-
 font-size:32px;
-
 font-weight:700;
-
 color:#2c6df2;
-
 }
 
 .learn-logo i{
-
 margin-right:8px;
-
 }
 
 .learn-nav .nav-link{
-
 color:#444;
-
 margin:0 15px;
-
 font-weight:500;
-
 }
 
 .learn-nav .active{
-
 color:#2c6df2;
-
 font-weight:700;
-
 }
 
 .learn-btn-back{
-
 border-radius:30px;
-
 padding:10px 25px;
-
 background:#2c6df2;
-
 color:white;
-
 }
 
-
-/* hero */
-
 .learn-hero{
-
 background:#eaf4ff;
-
 margin-top:30px;
-
 padding:70px;
-
 border-radius:35px;
-
 overflow:hidden;
 
 }
 
 .learn-badge{
-
 background:white;
-
 padding:8px 18px;
-
 border-radius:30px;
-
 color:#2c6df2;
-
 font-size:14px;
-
 font-weight:600;
-
 }
 
 .learn-hero h1{
-
 font-size:52px;
-
 font-weight:800;
-
 margin-top:25px;
-
 line-height:1.2;
-
 }
 
 .learn-hero p{
-
 margin:25px 0;
-
 font-size:18px;
-
 color:#666;
-
 }
 
 .learn-btn{
-
 background:#2c6df2;
-
 color:white;
-
 padding:14px 30px;
-
 border-radius:40px;
-
 }
 
 .learn-btn i{
-
 margin-left:10px;
-
 }
 
 .learn-hero-img{
-
 width:90%;
-
 }
 
-
-
-/* cards */
-
 .learn-card{
-
 background:white;
-
 padding:30px;
-
 margin-top:40px;
-
 border-radius:25px;
-
 text-align:center;
-
 height:100%;
-
 transition:.3s;
-
 box-shadow:0 4px 15px rgba(0,0,0,.04);
-
 }
 
 .learn-card:hover{
-
 transform:translateY(-8px);
-
 }
 
 .learn-card img{
-
 width:80px;
-
 margin-bottom:20px;
-
 }
 
 .learn-card h4{
-
 font-weight:700;
-
 }
 
 .learn-card p{
-
 color:#666;
-
 }
 
 .learn-card a{
-
 text-decoration:none;
-
 font-weight:600;
-
 }
-
-
-
-/* bawah */
 
 .learn-box{
 
-margin:80px 0;
-
+margin:50px 0;
 padding:50px;
-
 background:white;
-
 border-radius:30px;
-
 box-shadow:0 4px 15px rgba(0,0,0,.04);
-
 }
 
 .learn-box h2{
-
 font-weight:700;
-
 margin-bottom:20px;
-
 }
 
 .learn-box p{
-
 color:#666;
-
 }
 
 .learn-box li{
-
 margin-bottom:15px;
-
 }

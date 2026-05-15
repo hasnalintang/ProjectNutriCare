@@ -1,3 +1,18 @@
+<?php
+
+session_start();
+include 'koneksi.php';
+
+if (!isset($_SESSION['nama'])) {
+
+    header("Location: login.php");
+}
+?>
+<?php
+$current = basename($_SERVER['PHP_SELF']);
+?>
+
+
 <!DOCTYPE html>
 <html lang="id">
 
@@ -9,78 +24,71 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="./css/more.css">
+    <link rel="stylesheet" href="./css/shared.css">
 
 </head>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<body class="learn-body">
-    <div class="sidebar">
-        <div>
-            <div class="logo-area">
-                <img src="assets/logo02.png" class="logo-img">
-                <h3>NutriCare</h3>
-                <p>Sistem Perhitungan Gizi <br>& Berat Badan</p>
-            </div>
-            <ul class="menu">
-                <li>
-                    <a href="dashboard.php">
-                        <i class="fa-solid fa-house"></i>
-                        Dashboard
-                    </a>
-                </li>
-
-                <li>
-                    <a href="bmi.php" class="active">
-                        <i class="fa-solid fa-calculator"></i>
-                        Hitung BMI
-                    </a>
-                </li>
-
-                <li>
-                    <a href="target.php">
-                        <i class="fa-solid fa-bullseye"></i>
-                        Target Berat
-                    </a>
-                </li>
-
-                <li>
-                    <a href="kalori.php">
-                        <i class="fa-solid fa-fire"></i>
-                        Kebutuhan Kalori
-                    </a>
-                </li>
-
-                <li>
-                    <a href="rekomendasi.php">
-                        <i class="fa-solid fa-gem"></i>
-                        Rekomendasi Gizi
-                    </a>
-                </li>
-
-                <li>
-                    <a href="riwayat.php">
-                        <i class="fa-regular fa-clock"></i>
-                        Riwayat
-                    </a>
-                </li>
-
-                <li>
-                    <a href="artikel.php">
-                        <i class="fa-regular fa-newspaper"></i>
-                        Artikel Kesehatan
-                    </a>
-                </li>
-
-            </ul>
-
-            <div class="hero-img">
-                <img src="assets/hero.png">
-            </div>
+<body>
+<div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarMenu" style="width:270px;">
+    <div class="offcanvas-header border-bottom pb-3">
+        <div class="d-flex align-items-center gap-2">
+            <img src="assets/logo02.png" style="width:36px;">
+            <span style="font-weight:700;font-size:18px;color:#2563eb;">NutriCare</span>
         </div>
-        <a href="logout.php" class="logout-btn">
-            <i class="fa-solid fa-arrow-right-from-bracket"></i>
-            Logout
-        </a>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
     </div>
+    <div class="offcanvas-body d-flex flex-column justify-content-between p-0">
+        <div class="px-3 pt-3">
+            <p class="text-muted" style="font-size:12px;padding:0 8px;">Sistem Perhitungan Gizi & Berat Badan</p>
+            <ul class="menu mt-3">
+                <li>
+                    <a href="dashboard.php" class="<?= $current=='dashboard.php' ? 'active' : '' ?>">
+                        <i class="fa-solid fa-house"></i> Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="bmi.php" class="<?= $current=='bmi.php' ? 'active' : '' ?>">
+                        <i class="fa-solid fa-calculator"></i> Hitung BMI
+                    </a>
+                </li>
+                <li>
+                    <a href="target.php" class="<?= $current=='target.php' ? 'active' : '' ?>">
+                        <i class="fa-solid fa-bullseye"></i> Target Berat
+                    </a>
+                </li>
+                <li>
+                    <a href="kalori.php" class="<?= $current=='kalori.php' ? 'active' : '' ?>">
+                        <i class="fa-solid fa-fire"></i> Kebutuhan Kalori
+                    </a>
+                </li>
+                <li>
+                    <a href="rekomendasi.php" class="<?= $current=='rekomendasi.php' ? 'active' : '' ?>">
+                        <i class="fa-solid fa-gem"></i> Rekomendasi Gizi
+                    </a>
+                </li>
+                <li>
+                    <a href="riwayat.php" class="<?= $current=='riwayat.php' ? 'active' : '' ?>">
+                        <i class="fa-regular fa-clock"></i> Riwayat
+                    </a>
+                </li>
+                <li>
+                    <a href="artikel.php" class="<?= $current=='artikel.php' ? 'active' : '' ?>">
+                        <i class="fa-regular fa-newspaper"></i> Artikel Kesehatan
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="px-3 pb-4">
+            <div class="text-center mb-3">
+                <img src="assets/hero.png" style="width:100%;max-width:180px;opacity:0.85;">
+            </div>
+            <a href="logout.php" class="logout-btn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+            </a>
+        </div>
+    </div>
+</div>
 
 
     <main class="db-main">
@@ -215,7 +223,8 @@
             </div>
         </div>
     </section>
-
+    </main>
+    </div>
 </body>
 
 </html>

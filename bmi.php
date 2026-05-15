@@ -69,88 +69,103 @@ if(isset($_POST['hitung'])){
     <link rel="stylesheet" href="./css/bmi.css">
 </head>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 <body class="db-body">
-<div class="db-wrapper">
-    <div class="sidebar">
+    <div class="db-wrapper">
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarMenu">
+            <div class="offcanvas-header">
 
-        <div>
+                <h5 class="offcanvas-title logi-img">
+                    Menu
+                </h5>
 
-            <div class="logo-area">
-
-                <img src="assets/logo02.png" class="logo-img">
-
-                <h3>NutriCare</h3>
-
-                <p>Sistem Perhitungan Gizi <br>& Berat Badan</p>
+                <button type="button"
+                    class="btn-close"
+                    data-bs-dismiss="offcanvas">
+                </button>
 
             </div>
+            <div class="offcanvas-body">
+                <div class="logo-area">
+                    <div>
+                        <img src="assets/logo02.png" class="logo-img">
+                        <h3>NutriCare</h3>
+                        <p>Sistem Perhitungan Gizi <br>& Berat Badan</p>
+                    </div>
+                    <ul class="menu">
 
-            <ul class="menu">
+                        <li>
+                            <a href="dashboard.php">
+                                <i class="fa-solid fa-house"></i>
+                                Dashboard
+                            </a>
+                        </li>
 
-                <li>
-                    <a href="dashboard.php">
-                        <i class="fa-solid fa-house"></i>
-                        Dashboard
-                    </a>
-                </li>
+                        <li>
+                            <a href="bmi.php">
+                                <i class="fa-solid fa-calculator"></i>
+                                Hitung BMI
+                            </a>
+                        </li>
 
-                <li>
-                    <a href="bmi.php" class="active">
-                        <i class="fa-solid fa-calculator"></i>
-                        Hitung BMI
-                    </a>
-                </li>
+                        <li>
+                            <a href="target.php">
+                                <i class="fa-solid fa-bullseye"></i>
+                                Target Berat
+                            </a>
+                        </li>
 
-                <li>
-                    <a href="target.php">
-                        <i class="fa-solid fa-bullseye"></i>
-                        Target Berat
-                    </a>
-                </li>
+                        <li>
+                            <a href="kalori.php" class="active">
+                                <i class="fa-solid fa-fire"></i>
+                                Kebutuhan Kalori
+                            </a>
+                        </li>
 
-                <li>
-                    <a href="kalori.php">
-                        <i class="fa-solid fa-fire"></i>
-                        Kebutuhan Kalori
-                    </a>
-                </li>
+                        <li>
+                            <a href="rekomendasi.php">
+                                <i class="fa-solid fa-gem"></i>
+                                Rekomendasi Gizi
+                            </a>
+                        </li>
 
-                <li>
-                    <a href="rekomendasi.php">
-                        <i class="fa-solid fa-gem"></i>
-                        Rekomendasi Gizi
-                    </a>
-                </li>
+                        <li>
+                            <a href="riwayat.php">
+                                <i class="fa-regular fa-clock"></i>
+                                Riwayat
+                            </a>
+                        </li>
 
-                <li>
-                    <a href="riwayat.php">
-                        <i class="fa-regular fa-clock"></i>
-                        Riwayat
-                    </a>
-                </li>
+                        <li>
+                            <a href="artikel.php">
+                                <i class="fa-regular fa-newspaper"></i>
+                                Artikel Kesehatan
+                            </a>
+                        </li>
 
-                <li>
-                    <a href="artikel.php">
-                        <i class="fa-regular fa-newspaper"></i>
-                        Artikel Kesehatan
-                    </a>
-                </li>
+                    </ul>
 
-            </ul>
+                    <div class="hero-img">
+                        <img src="assets/hero.png">
+                    </div>
+                </div>
+                </div>
 
-            <div class="hero-img">
-                <img src="assets/hero.png">
-            </div>
+                <a href="logout.php" class="logout-btn">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    Logout
+                </a>
+
         </div>
-        <a href="logout.php" class="logout-btn">
-            <i class="fa-solid fa-arrow-right-from-bracket"></i>
-            Logout
-        </a>
-    </div>
-
 
     <main class="db-main">
         <div class="db-topbar">
+                <button class="btn"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#sidebarMenu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             <div>
                 <h3 class="fw-bold mb-1">
                     Perhitungan BMI
@@ -174,8 +189,6 @@ if(isset($_POST['hitung'])){
 
         </div>
 
-
-        <!-- ALERT -->
         <div class="bmi-alert">
 
             <i class="fa-solid fa-circle-info"></i>
@@ -251,8 +264,6 @@ if(isset($_POST['hitung'])){
 
                     </form>
 
-
-                    <!-- TIPS -->
                     <div class="bmi-tips">
 
                         <div class="d-flex gap-3">

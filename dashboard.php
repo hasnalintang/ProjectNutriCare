@@ -22,90 +22,103 @@ if (!isset($_SESSION['nama'])) {
     <title>Dashboard NutriCare</title>
 </head>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 <body class="db-body">
     <div class="db-wrapper">
-        <div class="sidebar">
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarMenu">
+            <div class="offcanvas-header">
 
-        <div>
+                <h5 class="offcanvas-title logi-img">
+                    Menu
+                </h5>
 
-            <div class="logo-area">
-
-                <img src="assets/logo02.png" class="logo-img">
-
-                <h3>NutriCare</h3>
-
-                <p>Sistem Perhitungan Gizi <br>& Berat Badan</p>
+                <button type="button"
+                    class="btn-close"
+                    data-bs-dismiss="offcanvas">
+                </button>
 
             </div>
+            <div class="offcanvas-body">
+                <div class="logo-area">
+                    <div>
+                        <img src="assets/logo02.png" class="logo-img">
+                        <h3>NutriCare</h3>
+                        <p>Sistem Perhitungan Gizi <br>& Berat Badan</p>
+                    </div>
+                    <ul class="menu">
 
-            <ul class="menu">
+                        <li>
+                            <a href="dashboard.php">
+                                <i class="fa-solid fa-house"></i>
+                                Dashboard
+                            </a>
+                        </li>
 
-                <li>
-                    <a href="dashboard.php" class="active">
-                        <i class="fa-solid fa-house"></i>
-                        Dashboard
-                    </a>
-                </li>
+                        <li>
+                            <a href="bmi.php">
+                                <i class="fa-solid fa-calculator"></i>
+                                Hitung BMI
+                            </a>
+                        </li>
 
-                <li>
-                    <a href="bmi.php">
-                        <i class="fa-solid fa-calculator"></i>
-                        Hitung BMI
-                    </a>
-                </li>
+                        <li>
+                            <a href="target.php">
+                                <i class="fa-solid fa-bullseye"></i>
+                                Target Berat
+                            </a>
+                        </li>
 
-                <li>
-                    <a href="target.php">
-                        <i class="fa-solid fa-bullseye"></i>
-                        Target Berat
-                    </a>
-                </li>
+                        <li>
+                            <a href="kalori.php" class="active">
+                                <i class="fa-solid fa-fire"></i>
+                                Kebutuhan Kalori
+                            </a>
+                        </li>
 
-                <li>
-                    <a href="kalori.php">
-                        <i class="fa-solid fa-fire"></i>
-                        Kebutuhan Kalori
-                    </a>
-                </li>
+                        <li>
+                            <a href="rekomendasi.php">
+                                <i class="fa-solid fa-gem"></i>
+                                Rekomendasi Gizi
+                            </a>
+                        </li>
 
-                <li>
-                    <a href="rekomendasi.php">
-                        <i class="fa-solid fa-gem"></i>
-                        Rekomendasi Gizi
-                    </a>
-                </li>
+                        <li>
+                            <a href="riwayat.php">
+                                <i class="fa-regular fa-clock"></i>
+                                Riwayat
+                            </a>
+                        </li>
 
-                <li>
-                    <a href="riwayat.php">
-                        <i class="fa-regular fa-clock"></i>
-                        Riwayat
-                    </a>
-                </li>
+                        <li>
+                            <a href="artikel.php">
+                                <i class="fa-regular fa-newspaper"></i>
+                                Artikel Kesehatan
+                            </a>
+                        </li>
 
-                <li>
-                    <a href="artikel.php">
-                        <i class="fa-regular fa-newspaper"></i>
-                        Artikel Kesehatan
-                    </a>
-                </li>
+                    </ul>
 
-            </ul>
+                    <div class="hero-img">
+                        <img src="assets/hero.png">
+                    </div>
+                </div>
+                </div>
 
-            <div class="hero-img">
-                <img src="assets/hero.png">
-            </div>
+                <a href="logout.php" class="logout-btn">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    Logout
+                </a>
 
         </div>
 
-        <a href="logout.php" class="logout-btn">
-            <i class="fa-solid fa-arrow-right-from-bracket"></i>
-            Logout
-        </a>
-
-    </div>
-
         <main class="db-main">
-            <div class="db-topbar">
+            <div class="db-topbar d-flex align-items-center gap-3">
+                <button class="btn"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#sidebarMenu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
                 <div>
                     <h4 class="mb-0 fw-bold">
                         Halo, <?php echo $_SESSION['nama']; ?> 👋
@@ -115,11 +128,11 @@ if (!isset($_SESSION['nama'])) {
                     </p>
                 </div>
                 <div class="db-profile">
-                <img src="./assets/profilenc.jpg">
-                <span>
-                    Hai, <?php echo $_SESSION['nama']; ?>
-                </span>
-            </div>
+                    <img src="./assets/profilenc.jpg">
+                    <span>
+                        Hai, <?php echo $_SESSION['nama']; ?>
+                    </span>
+                </div>
             </div>
 
             <section class="db-hero">
@@ -133,9 +146,9 @@ if (!isset($_SESSION['nama'])) {
                             Pantau kondisi tubuhmu dan dapatkan rekomendasi terbaik.
                         </p>
                         <a href="bmi.php">
-                        <button class="btn db-btn-primary">
-                            Hitung Sekarang →
-                        </button>
+                            <button class="btn db-btn-primary">
+                                Hitung Sekarang →
+                            </button>
                         </a>
                     </div>
                 </div>
@@ -238,7 +251,7 @@ if (!isset($_SESSION['nama'])) {
         </main>
     </div>
 
-     <footer class="footer-index mt-2" id="tentang">
+    <footer class="footer-index mt-2" id="tentang">
         <div class="container d-flex justify-content-between flex-wrap">
 
             <div>

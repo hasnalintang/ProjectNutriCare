@@ -1,0 +1,152 @@
+/* ============================
+   SHARED CSS - NutriCare
+   Dipakai semua halaman inner
+   ============================ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f4f7ff;
+}
+
+/* ── TOPBAR ── */
+.nc-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #e8edf5;
+}
+
+.nc-topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.nc-hamburger {
+    width: 42px;
+    height: 42px;
+    border: none;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #2563eb;
+    cursor: pointer;
+    transition: 0.2s;
+    flex-shrink: 0;
+}
+
+.nc-hamburger:hover {
+    background: #2563eb;
+    color: white;
+}
+
+.nc-page-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+}
+
+.nc-breadcrumb {
+    font-size: 13px;
+    color: #94a3b8;
+    margin: 0;
+}
+
+.nc-breadcrumb span {
+    color: #2563eb;
+    font-weight: 600;
+}
+
+.nc-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    padding: 8px 16px 8px 8px;
+    border-radius: 40px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.nc-profile img {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.nc-profile span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+}
+
+/* ── MAIN WRAPPER ── */
+.nc-main {
+    padding: 30px;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* ── SIDEBAR OFFCANVAS MENU ── */
+.menu {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    margin-bottom: 6px;
+}
+
+.menu li a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    color: #5b6475;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.menu li a:hover {
+    background: #edf4ff;
+    color: #2563eb;
+}
+
+.menu li a.active {
+    background: #2563eb;
+    color: white;
+}
+
+.logout-btn {
+    text-decoration: none;
+    color: #ef4444;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    transition: 0.2s;
+    font-size: 14px;
+}
+
+.logout-btn:hover {
+    background: #fee2e2;
+}

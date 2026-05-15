@@ -212,7 +212,6 @@ if (isset($_POST['hitung'])) {
                     Hitung Kalori
                 </span>
             </p>
-            <br>
 
             <div class="top-grid">
 
